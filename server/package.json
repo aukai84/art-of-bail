@@ -6,6 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Keegan Gladstone, Aukai Tirrell",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.0"
+  }
 }
