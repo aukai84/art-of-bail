@@ -1,10 +1,11 @@
 const User = require('../user.js');
 const mongoose = require('mongoose');
+const config = require('../../config.js');
 mongoose.connect('localhost:27017/art-of-bail');
 
 const user = new User({
-    username: 'artLeeJr',
-    password: 'bigBBC808'
+    username: config.admin_user,
+    password: config.admin_password
 });
 
 user.save(function(err, result) {
