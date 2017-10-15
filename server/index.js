@@ -1,8 +1,9 @@
 const express = require('express');
-
+const mongoose = require('mongoose');
 
 const app = express();
 
+mongoose.connect('localhost:27017/art-of-bail');
 
 app.use('/', require('./routes'));
 

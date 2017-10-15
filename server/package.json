@@ -9,7 +9,8 @@
   "author": "Keegan Gladstone, Aukai Tirrell",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "mongoose": "^4.12.2"
   },
   "devDependencies": {
     "nodemon": "^1.12.0"
