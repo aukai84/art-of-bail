@@ -1,0 +1,17 @@
+Art of Bail Notes
+
+**HOME PAGE**
+
+- splash page
+- arthur info
+- contact arthur form
+
+
+
+**ARTHUR LOGIN PAGE**
+
+- art logs in creates new "case" for client
+- fills in data
+    - balance and payment dates, court dates, etc.
+- art gives client "id" to see "case" information on his website at their next meetup
+- art wants to have a mailer/texter at each specified date during the case
