@@ -30,6 +30,7 @@ export default class Layout extends Component {
                 <div id="main-header">
                     <h1>Art of Bail Hawaii</h1>
                 </div>
+                <Link href="/admin-login">Login</Link>
                 <Navbar color="faded" full="true" light toggleable>
                   <NavbarToggler right onClick={this.toggleNav} />
                   <NavbarBrand href="/">Logo</NavbarBrand>
