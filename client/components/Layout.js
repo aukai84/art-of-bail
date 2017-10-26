@@ -39,22 +39,18 @@ export default class Layout extends Component {
                           <Link href="/"><a className="nav-link">Home</a></Link>
                       </NavItem>
                       <NavItem>
-                              <Link href="/info"><a className="nav-link">About Us</a></Link>
+                              <Link href="/about-us"><a className="nav-link">About Us</a></Link>
                       </NavItem>
                       <NavItem>
-                              <Link href="/locations"><a className="nav-link">Find Your Case</a></Link>
+                              <Link href="/find-your-case"><a className="nav-link">Find Your Case</a></Link>
                       </NavItem>
                       <NavItem>
-                          <Link href="/contact"><a className="nav-link">Contact Us</a></Link>
+                          <Link href="/contact-us"><a className="nav-link">Contact Us</a></Link>
                       </NavItem>
                     </Nav>
                   </Collapse>
                 </Navbar>
-                <Container style={{
-                    margin: 0,
-                    padding: 0,
-                    width: "100%",
-                }}>
+                <Container>
                     {this.props.children}
                 </Container> 
             </div>
