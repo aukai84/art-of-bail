@@ -27,19 +27,22 @@ export default class Layout extends Component {
                     <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
                     <link rel="stylesheet" href="/static/css/styles.css"/>   
                 </Head>
+                <div id="main-header">
+                    <h1>Art of Bail Hawaii</h1>
+                </div>
                 <Navbar color="faded" full="true" light toggleable>
                   <NavbarToggler right onClick={this.toggleNav} />
-                  <NavbarBrand href="/">Art of Bail Hawaii</NavbarBrand>
+                  <NavbarBrand href="/">Logo</NavbarBrand>
                   <Collapse isOpen={this.state.isOpen} className="navbar-toggle" padding-right="1rem" navbar>
                     <Nav className="ml-auto" navbar>
                       <NavItem> 
                           <Link href="/"><a className="nav-link">Home</a></Link>
                       </NavItem>
                       <NavItem>
-                              <Link href="/info"><a className="nav-link">Info</a></Link>
+                              <Link href="/info"><a className="nav-link">About Us</a></Link>
                       </NavItem>
                       <NavItem>
-                              <Link href="/locations"><a className="nav-link">Locations</a></Link>
+                              <Link href="/locations"><a className="nav-link">Find Your Case</a></Link>
                       </NavItem>
                       <NavItem>
                           <Link href="/contact"><a className="nav-link">Contact Us</a></Link>
