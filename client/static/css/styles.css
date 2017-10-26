@@ -1,0 +1,67 @@
+p {
+    margin-bottom: .5rem;
+    font-size: .75rem;
+}
+
+.navbar {
+    background-color: white;
+    color: black;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem; 
+}
+
+#main-header {
+    height: 10%;
+    text-align: center;
+}
+
+.header {
+    height: 2rem;
+    text-align: center;
+}
+
+.dropdown-menu {
+    border: none;
+    font-family: sans-serif;
+    color: green;
+}
+
+.home-page-wrapper{
+    padding: 4rem 0 4rem 0;
+}
+
+.home-page-info {
+    text-align: center;
+    padding: 1rem;
+}
+
+.thumbnail-container {
+    margin-bottom: 1.5rem;
+    padding: 0 1.5rem 0 1.5rem;
+    text-align: center;
+}
+
+.dropdown-toggle {
+    width: 100%;
+}
+
+.dropdown-menu {
+    align-items: center;
+    width: 100%;
+}
+
+.dropdown-item {
+    text-align: center;
+}
