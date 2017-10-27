@@ -7,21 +7,26 @@ import {Container, Row, Col, Form, FormGroup, FormText, Label, Input, Button} fr
 class AdminLogin extends Component {
     constructor(props){
         super(props);
+        this.loginSuccess = this.loginSuccess.bind(this);
 
+    }
+
+    loginSuccess(){
+        this.props.url.replace('/admin-dashboard');
     }
 
     render(){
         return(
             <Layout>
                 <div>This is the admin login page</div>
-                <Form>
+                <Form id="loginForm">
                     <FormGroup>
                         <Input type="text" placeholder="Username"/>
                     </FormGroup>
                     <FormGroup>
                         <Input type="password" placeholder="Password"/>
                     </FormGroup>
-                    <Button color="primary" onClick={this.handleSubmit}>Log in</Button>
+                    <Button className="loginButton" color="primary" onClick={this.loginSuccess}>Log in</Button>
                 </Form>
             </Layout>
         )
