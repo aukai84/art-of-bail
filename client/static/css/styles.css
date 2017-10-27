@@ -17,6 +17,10 @@ p {
     height: 25px;
 }
 
+.nav-item {
+    color: red;
+}
+
 .nav-link {
     padding-right: 1rem;
     padding-left: 1rem; 
