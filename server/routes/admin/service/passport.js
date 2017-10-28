@@ -1,6 +1,9 @@
 const passport = require('passport')
 const User = require('../../../models/user');
 const localStrategy = require('passport-local');
+const JwtStrategy = require('passport-jwt').Strategy;
+const ExtractJwt = require('passport-jwt').ExtractJwt;
+const config = require('../../../config');
 
 const localLogin = new localStrategy(function(username, password, done) {
     User.findOne({ username: username }, function(err, user) {
@@ -24,4 +27,28 @@ const localLogin = new localStrategy(function(username, password, done) {
     });
 });
 
+const jwtOptions = {
+    jwtFromRequest: ExtractJwt.fromHeader('authorization'),
+    secretOrKey: config.secret
+}
+
+const adminStrategy = new JwtStrategy(jwtOptions, function(payload, done) {
+    User.findById(payload.sub, function(err, user) {
+        if (err) {
+            return done(err, false);
+        }
+        if (user) {
+            if (payload.admin) {
+                done(null, user);
+            } else {
+                done(null, false, { message: 'you are not the admin.' });
+            }
+        } else {
+            done(null, false);
+        }
+    });
+});
+
+
 passport.use(localLogin);
+passport.use(adminStrategy);

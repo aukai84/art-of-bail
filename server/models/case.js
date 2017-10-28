@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema()
+const Schema = mongoose.Schema;
 
 /*
 caseNumber is 6 digit code for client to enter to gain access to case.

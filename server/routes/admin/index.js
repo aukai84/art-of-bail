@@ -6,6 +6,7 @@ const passportService = require('./service/passport');
 const jwt = require('jwt-simple');
 
 const signInAdmin = passport.authenticate('local', { session: false });
+const authenticatedAdmin = passport.authenticate('jwt', { session: false });
 
 //test route, should be handled on client.
 router.get('/', function(req, res, next) {
@@ -26,6 +27,12 @@ router.post('/signin', signInAdmin, function(req, res, next) {
 
 });
 
+//test authenticatedAdmin check.
+router.get('/testadmin', authenticatedAdmin, function(req, res, next) {
+    res.send('congrats you are authenticated.');
+});
 
+//edit-cases routes must be authenticated.
+router.use('/edit-cases', authenticatedAdmin, require('./edit-cases'));
 
 module.exports = router;
