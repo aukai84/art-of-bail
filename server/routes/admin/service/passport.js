@@ -28,9 +28,8 @@ const localLogin = new localStrategy(function(username, password, done) {
     });
 });
 
-<<<<<<< HEAD
 passport.use(localLogin);
-=======
+
 const jwtOptions = {
     jwtFromRequest: ExtractJwt.fromHeader('authorization'),
     secretOrKey: config.secret
@@ -56,4 +55,3 @@ const adminStrategy = new JwtStrategy(jwtOptions, function(payload, done) {
 
 passport.use(localLogin);
 passport.use(adminStrategy);
->>>>>>> 825da1cf5858b57453a8860d48d8b6ae456c98d5
