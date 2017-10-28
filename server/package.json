@@ -17,7 +17,9 @@
     "jwt-simple": "^0.5.1",
     "mongoose": "^4.12.2",
     "passport": "^0.4.0",
-    "passport-local": "^1.0.0"
+    "passport-jwt": "^3.0.1",
+    "passport-local": "^1.0.0",
+    "randomatic": "^2.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.12.0"
