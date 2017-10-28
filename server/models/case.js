@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema()
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 /*
 caseNumber is 6 digit code for client to enter to gain access to case.
@@ -11,9 +11,9 @@ totalBailOutstanding is the remaining balance on the bail due for payment.
 const caseSchema = new Schema({
     caseNumber: { type: Number, unique: true, require: true },
     defendantName: { type: String },
-    defendantPhone: { type: Number },
+    defendantPhone: { type: String},
     cosignerName: { type: String },
-    cosignerPhone: { type: Number },
+    cosignerPhone: { type: String},
     stateCaseLink: { type: String },
     courtDatesList: { type: Array },
     totalBailAmount: { type: Number },

@@ -1,12 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
+const cors = require('cors');
 
 const app = express();
 
 mongoose.connect('localhost:27017/art-of-bail');
 
+app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/', require('./routes'));

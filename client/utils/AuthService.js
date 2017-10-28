@@ -1,6 +1,6 @@
 export default class AuthService {
     constructor(domain){
-        this.domain = domain || 'http://localhost:8080'
+        this.domain = domain || process.env.API_URL
         this.fetch = this.fetch.bind(this)
         this.login = this.login.bind(this)
         this.getProfile = this.getProfile.bind(this)
@@ -17,14 +17,9 @@ export default class AuthService {
             })
         })
             .then(res => {
+                console.log('sucessful auth...', res)
                 //set token on client local storage
                 this.setToken(res.token)
-                return this.fetch(`${this.domain}/admin`,{
-                    method: 'GET'
-                })
-            }).then(res => {
-                //set profile to admin(dickbutt) on local storage
-                this.setProfile(res.profile)
                 return Promise.resolve(res)
             })
     }

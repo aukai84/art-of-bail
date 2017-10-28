@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup, FormText} from 'reactstrap';
+import ReactLoading from 'react-loading';
 
 class AddCaseModal extends Component {
     constructor(props){
@@ -29,6 +30,8 @@ class AddCaseModal extends Component {
                     <ModalHeader toggle={this.togglel}>Add New Case</ModalHeader>
                     <ModalBody>
                         <div>This will be where we place the case forms</div>
+                        <div>Loading Example</div>
+                        <ReactLoading type="cylon" color="cornflowerblue" height="667" width="375" delay={500} />
                     </ModalBody>
                     <ModalFooter>
                         <Button color="primary" onClick={this.handleAdd}>Submit</Button>
