@@ -1,20 +1,21 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+const randomize = require('randomatic');
 /*
-caseNumber is 6 digit code for client to enter to gain access to case.
-courDatesList is an array of upcoming court dates.
+caseNumber is 4 digit unique code for client to use to gain access to their case.
+courDatesList is an array of upcoming court DATES.
 totalBailOutstanding is the remaining balance on the bail due for payment. 
 */
 
 
 const caseSchema = new Schema({
-    caseNumber: { type: Number, unique: true, require: true },
+    caseNumber: { type: String, unique: true, require: true },
     defendantName: { type: String },
-    defendantPhone: { type: Number },
+    defendantPhone: { type: String },
     cosignerName: { type: String },
-    cosignerPhone: { type: Number },
+    cosignerPhone: { type: String },
     stateCaseLink: { type: String },
+    caseStartDate: { type: Date },
     courtDatesList: { type: Array },
     totalBailAmount: { type: Number },
     totalBailOutstanding: { type: Number },
@@ -22,5 +23,13 @@ const caseSchema = new Schema({
 });
 
 //method to generate unique caseNumber
+caseSchema.pre('save', function(next) {
+    const bail = this;
+
+    bail.caseNumber = randomize('0', 4);
+    bail.caseStartDate = Date.now();
+
+    next();
+});
 
 module.exports = mongoose.model('case', caseSchema);
