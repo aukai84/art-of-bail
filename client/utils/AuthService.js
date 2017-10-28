@@ -19,7 +19,12 @@ export default class AuthService {
             .then(res => {
                 console.log('sucessful auth...', res)
                 //set token on client local storage
-                this.setToken(res.token)
+                this.setToken(res.token);
+                return this.fetch(`${this.domain}/admin`, {
+                    method: 'GET'
+                })
+            }).then(res => {
+                this.setProfile(res.profile);
                 return Promise.resolve(res)
             })
     }

@@ -9,7 +9,21 @@ import withAuth from '../utils/withAuth.js';
 class AdminDashboard extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            items: []
+        }
         this.logout= this.logout.bind(this)
+    }
+
+    componentDidMount(){
+        this.props.auth.fetch(`${this.props.auth.domain}/admin/edit-cases`, {
+            method: 'GET'
+        })
+            .then(res => {
+                this.setState({
+                    items: res
+                })
+            })
     }
 
     logout(){
@@ -23,6 +37,9 @@ class AdminDashboard extends Component {
                 <div>This is the admin dashboard</div>
                 <AddCaseModal/>
                 <Button color="secondary" size="sm" onClick={this.logout}>Sign Out</Button>
+                {this.state.items.map(item => (
+                    <div>Defendant: {item.defendantName}</div>
+                ))}
             </Layout>
         )
     }
