@@ -3,8 +3,9 @@ import Link from 'next/link';
 import Layout from '../components/Layout.js';
 import AddCaseModal from '../components/AddCaseModal.js';
 import fetch from 'isomorphic-unfetch';
-import {Form, FormGroup, FormText, Button, Label, Input, Col, Row, Container} from 'reactstrap';
+import {Card, CardImg, CardText, CardBody, Form, FormGroup, FormText, Button, Label, Input, Col, Row, Container} from 'reactstrap';
 import withAuth from '../utils/withAuth.js';
+import EditCaseModal from '../components/EditCaseModal.js';
 
 class AdminDashboard extends Component {
     constructor(props){
@@ -38,7 +39,7 @@ class AdminDashboard extends Component {
                 <AddCaseModal/>
                 <Button color="secondary" size="sm" onClick={this.logout}>Sign Out</Button>
                 {this.state.items.map(item => (
-                    <div>Defendant: {item.defendantName}</div>
+                    <EditCaseModal {...this.props} item={item}/>
                 ))}
             </Layout>
         )
