@@ -12,18 +12,28 @@ class EditCaseModal extends Component {
 
     toggle(){
         this.setState({
-            modal: true
+            modal: !this.state.modal 
         })
     }
 
     render(){
         return(
             <div onclick={this.toggle}>
-                <Card>
+                <Card onClick={this.toggle}>
                     <CardTitle>{this.props.item.defendantName}</CardTitle>
                     <CardSubtitle>Case no. {this.props.item.caseNumber}</CardSubtitle>
                     <CardText>Cosigner : {this.props.item.cosignerName}</CardText>
                 </Card>
+                <Modal isOpen={this.state.modal} toggle={this.toggle}>
+                    <ModalBody>
+                        <div>
+                            {this.props.item.stateCaseLink}
+                        </div>
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button color="primary" onClick={this.toggle}>Close</Button>
+                    </ModalFooter>
+                </Modal>
             </div>
         )
     }

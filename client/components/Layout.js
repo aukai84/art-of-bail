@@ -2,12 +2,16 @@ import React, {Component} from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import {Container, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem} from 'reactstrap';
+import AuthService from '../utils/AuthService.js';
+const API_URL = process.env.API_URL;
+const auth = new AuthService(API_URL); 
 
 export default class Layout extends Component {
     constructor(props){
         super(props);
         this.state = {
-            isOpen: false
+            isOpen: false,
+            isLoggedIn: false
         }
         this.toggleNav = this.toggleNav.bind(this);
     }
@@ -19,6 +23,8 @@ export default class Layout extends Component {
     }
 
     render(){
+
+        console.log('this is auth logged in?..', auth.loggedIn())
         return (
             <div>
                 <Head>
@@ -29,8 +35,10 @@ export default class Layout extends Component {
                 </Head>
                 <div id="main-header">
                     <h1>Art of Bail Hawaii</h1>
-                </div>
-                <Link href="/admin-login">Login</Link>
+                </div>{
+                auth.loggedIn()?(<Link href="/admin-dashboard">King Arthur's Dashboard</Link> ) : 
+                (<Link href="/admin-login">Login</Link>)
+                }
                 <Navbar color="faded" full="true" light toggleable>
                   <NavbarToggler right onClick={this.toggleNav} />
                   <NavbarBrand href="/">Logo</NavbarBrand>
