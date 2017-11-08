@@ -13,7 +13,8 @@ class AdminDashboard extends Component {
         this.state = {
             items: []
         }
-        this.logout= this.logout.bind(this)
+        this.logout = this.logout.bind(this);
+        this.deleteCase = this.deleteCase.bind(this);
     }
 
     componentDidMount(){
@@ -32,15 +33,27 @@ class AdminDashboard extends Component {
         this.props.url.replace('/admin-login')
     }
 
+    deleteCase(deletedItem){
+        this.setState({
+            items: this.state.items.filter(item => {
+                return item._id != deletedItem._id 
+            })
+        }) 
+    }
+
     render(){
         return(
             <Layout>
                 <div>This is the admin dashboard</div>
                 <AddCaseModal/>
                 <Button color="secondary" size="sm" onClick={this.logout}>Sign Out</Button>
-                {this.state.items.map(item => (
-                    <EditCaseModal {...this.props} item={item}/>
-                ))}
+                <Row>
+                    {this.state.items.map(item => (
+                        <Col className="edit-modal-container" xs="12" sm="6" md="6" lg="4" xl="4">
+                            <EditCaseModal {...this.props} deleteCase={this.deleteCase} item={item}/>
+                        </Col>
+                    ))}
+                </Row>
             </Layout>
         )
     }
