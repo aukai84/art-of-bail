@@ -64,6 +64,11 @@ p {
     text-align: center;
 }
 
+#request-form-container {
+    padding: 5%;
+    background-color: grey;
+}
+
 #loginForm {
     width: 75%;
     margin: auto;

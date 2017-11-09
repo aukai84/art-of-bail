@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
-import {Container, Row, Col, Form, FormGroup, Label, Input, FormText, Button} from 'reactstrap';
+import {Container, Row, Col, Form, FormGroup, Label, Input, InputGroup, InputGroupAddon, FormText, Button} from 'reactstrap';
 import Layout from '../components/Layout.js';
 let API_URL = process.env.API_URI;
 console.log('this is the api...', API_URL)
@@ -19,8 +19,6 @@ class Index extends Component {
     render(){
         return (
             <Layout>
-                <div>Home Page</div>
-                <h1>This is the api {process.env.API_URL}</h1>
                 <Row>
                     <Col xs="12" sm="12" md="8" lg="8" xl="8">
                         <div id="home-info-container">
@@ -28,29 +26,40 @@ class Index extends Component {
                         </div>
                     </Col>
                     <Col xs="12" sm="12" md="4" lg="4" xl="4">
-
                         <Form id="request-form-container">
                             <FormGroup>
-                                <Label for="clientName">Your Name</Label>
-                                <Input type="text" id="clienttName" placeholder="Enter Your Name"/>
+                                <Label for="clientName">Your Name<span className="required">*</span></Label>
+                                <InputGroup>
+                                    <InputGroupAddon><i className="fa fa-user-circle"></i></InputGroupAddon>
+                                    <Input type="text" id="clienttName" placeholder="Enter Your Name"/>
+                                </InputGroup>
                             </FormGroup>
                             <FormGroup>
-                                <Label for="clientEmail">Your Email</Label>
-                                <Input type="email" id="clientEmail" placeholder="Enter Your Email"/>
+                                <Label for="clientEmail">Your Email<span className="required">*</span></Label>
+                                <InputGroup>
+                                    <InputGroupAddon><i className="fa fa-envelope"></i></InputGroupAddon>
+                                    <Input type="email" id="clientEmail" placeholder="Enter Your Email"/>
+                                </InputGroup>
                             </FormGroup>
                             <FormGroup>
-                                <Label for="clientPhone">Phone Number</Label>
-                                <Input type="tel" id="clientPhone" placeholder="(xxx)xxx-xxxx"/>
+                                <Label for="clientPhone">Phone Number<span className="required">*</span></Label>
+                                <InputGroup>
+                                    <InputGroupAddon><i className="fa fa-phone-square fa-lg"></i></InputGroupAddon>
+                                    <Input type="tel" id="clientPhone" placeholder="(xxx)xxx-xxxx"/>
+                                </InputGroup>
                             </FormGroup>
                             <FormGroup>
-                                <Label for="defendantName">Defendant's Name</Label>
-                                <Input type="text" id="defendantName" placeholder="Enter Defendant's Name"/>
+                                <Label for="defendantName">Defendant's Name<span className="required">*</span></Label>
+                                <InputGroup>
+                                    <InputGroupAddon><i className="fa fa-user-circle"></i></InputGroupAddon>
+                                    <Input type="text" id="defendantName" placeholder="Enter Defendant's Name"/>
+                                </InputGroup>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="clientMessage">Message</Label>
                                 <Input type="textarea" id="clientMessage" placeholder="Message..."/>
                             </FormGroup>
-                            <Button onClick={this.handleSubmit}>Send</Button>
+                            <Button color="primary" onClick={this.handleSubmit} block>CONTACT US</Button>
                         </Form>
                     </Col>
                 </Row>
