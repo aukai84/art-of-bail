@@ -11,9 +11,9 @@ totalBailOutstanding is the remaining balance on the bail due for payment.
 const caseSchema = new Schema({
     caseNumber: { type: String, unique: true, require: true },
     defendantName: { type: String },
-    defendantPhone: { type: String },
+    defendantPhone: { type: String},
     cosignerName: { type: String },
-    cosignerPhone: { type: String },
+    cosignerPhone: { type: String},
     stateCaseLink: { type: String },
     caseStartDate: { type: Date },
     courtDatesList: { type: Array },

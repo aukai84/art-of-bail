@@ -6,6 +6,7 @@ node_modules
 
 .DS_Store
 .env
+.env.production
 npm-debug.log*
 
 #next configuration

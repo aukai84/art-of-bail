@@ -33,7 +33,7 @@ router.post('/new-case', function(req, res, next) {
             res.send('error adding case.');
         } else {
             console.log('new case added.');
-            res.send('case added!');
+            res.json({case: result, message: "new case created!"});
         }
     });
 });

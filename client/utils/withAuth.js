@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import AuthService from './AuthService.js';
+import ReactLoading from 'react-loading';
+const API_URL = process.env.API_URL;
 
 export default function withAuth(AuthComponent) {
-    const Auth = new AuthService('http://localhost:8080');
+    const Auth = new AuthService(API_URL);
     return class Authenticated extends Component {
         constructor(props){
             super(props);
@@ -24,7 +26,7 @@ export default function withAuth(AuthComponent) {
         render(){
             return (
                 <div>
-               {this.state.isLoading? (<div>LOADING...</div>) : (
+                    {this.state.isLoading? (<ReactLoading type="cylon" color="cornflowerblue" height="667" width="667" delay={2000}/>) : (
                     <AuthComponent {...this.props} auth={Auth} />
                     )}
                 </div>

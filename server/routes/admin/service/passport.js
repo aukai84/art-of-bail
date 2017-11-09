@@ -6,6 +6,7 @@ const ExtractJwt = require('passport-jwt').ExtractJwt;
 const config = require('../../../config');
 
 const localLogin = new localStrategy(function(username, password, done) {
+    console.log('username..', password)
     User.findOne({ username: username }, function(err, user) {
         if (err) {
             return done(err);
@@ -26,6 +27,8 @@ const localLogin = new localStrategy(function(username, password, done) {
         });
     });
 });
+
+passport.use(localLogin);
 
 const jwtOptions = {
     jwtFromRequest: ExtractJwt.fromHeader('authorization'),

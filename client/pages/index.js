@@ -3,6 +3,8 @@ import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 import {Container, Row, Col, Form, FormGroup, Label, Input, FormText, Button} from 'reactstrap';
 import Layout from '../components/Layout.js';
+let API_URL = process.env.API_URI;
+console.log('this is the api...', API_URL)
 
 class Index extends Component {
     constructor(props){
@@ -18,6 +20,7 @@ class Index extends Component {
         return (
             <Layout>
                 <div>Home Page</div>
+                <h1>This is the api {process.env.API_URL}</h1>
                 <Row>
                     <Col xs="12" sm="12" md="8" lg="8" xl="8">
                         <div id="home-info-container">

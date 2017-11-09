@@ -9,8 +9,8 @@ const signInAdmin = passport.authenticate('local', { session: false });
 const authenticatedAdmin = passport.authenticate('jwt', { session: false });
 
 //test route, should be handled on client.
-router.get('/', function(req, res, next) {
-    res.send('default admin homepage.')
+router.get('/', authenticatedAdmin, function(req, res, next) {
+    res.json({profile: "King Arthur"});
 });
 
 //test route, should be handled on client w/ form for signin.

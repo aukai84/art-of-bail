@@ -58,7 +58,7 @@ const bails = [
     }),
 ];
 
-done = 0;
+done = 1;
 for (var i = 0; i < bails.length; i++) {
     bails[i].save(function(err, result) {
         if (err) {

@@ -1,6 +1,8 @@
+import Cookies from 'js-cookie';
+
 export default class AuthService {
     constructor(domain){
-        this.domain = domain || 'http://localhost:8080'
+        this.domain = domain || process.env.API_URL
         this.fetch = this.fetch.bind(this)
         this.login = this.login.bind(this)
         this.getProfile = this.getProfile.bind(this)
@@ -17,14 +19,14 @@ export default class AuthService {
             })
         })
             .then(res => {
-                //set token on client local storage
-                this.setToken(res.token)
-                return this.fetch(`${this.domain}/admin`,{
+                console.log('sucessful auth...', res)
+                //set token on client cookies 
+                this.setToken(res.token);
+                return this.fetch(`${this.domain}/admin`, {
                     method: 'GET'
                 })
             }).then(res => {
-                //set profile to admin(dickbutt) on local storage
-                this.setProfile(res.profile)
+                this.setProfile(res.profile);
                 return Promise.resolve(res)
             })
     }
@@ -36,30 +38,30 @@ export default class AuthService {
     }
 
     setProfile(profile){
-        //saves profile data to localStorage
-        localStorage.setItem('profile', JSON.stringify(profile))
+        //saves profile data to cookies 
+        Cookies.set('profile', JSON.stringify(profile))
     }
 
     getProfile(){
-        //retrives current profile data from localStorage
-        const profile = localStorage.getItem('profile')
-        return profile ? JSON.parse(localStorage.profile) : {}
+        //retrives current profile data from cookies 
+        const profile = Cookies.get('profile')
+        return profile ? JSON.parse(Cookies.get('profile')) : {}
     }
 
     setToken(token){
-        //saves admin token to localStorage
-        localStorage.setItem('token', token)
+        //saves admin token to cookies 
+        Cookies.set('token', token)
     }
 
     getToken(){
-        //retrieve token from localStorage
-        return localStorage.getItem('token')
+        //retrieve token from cookies 
+        return Cookies.get('token')
     }
 
     logout(){
-        //clear user token and profile from localStorage
-        localStorage.removeItem("token");
-        localStorage.removeItem("profile");
+        //clear user token and profile from cookies 
+        Cookies.remove("token");
+        Cookies.remove("profile");
         console.log('logged out...')
     }
 

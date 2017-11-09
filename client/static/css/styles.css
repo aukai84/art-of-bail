@@ -17,6 +17,10 @@ p {
     height: 25px;
 }
 
+.nav-item {
+    color: red;
+}
+
 .nav-link {
     padding-right: 1rem;
     padding-left: 1rem; 
@@ -47,12 +51,6 @@ p {
     padding: 1rem;
 }
 
-.thumbnail-container {
-    margin-bottom: 1.5rem;
-    padding: 0 1.5rem 0 1.5rem;
-    text-align: center;
-}
-
 .dropdown-toggle {
     width: 100%;
 }
@@ -64,4 +62,18 @@ p {
 
 .dropdown-item {
     text-align: center;
+}
+
+#loginForm {
+    width: 75%;
+    margin: auto;
+}
+
+.loginButton {
+    width: 100%;
+}
+
+.edit-modal-container {
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
