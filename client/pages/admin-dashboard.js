@@ -45,7 +45,7 @@ class AdminDashboard extends Component {
         return(
             <Layout>
                 <div>This is the admin dashboard</div>
-                <AddCaseModal/>
+                <AddCaseModal {...this.props}/>
                 <Button color="secondary" size="sm" onClick={this.logout}>Sign Out</Button>
                 <Row>
                     {this.state.items.map(item => (

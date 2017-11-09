@@ -30,7 +30,8 @@ export default class Layout extends Component {
                     <title>Art's BBC</title>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                     <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
-                    <link rel="stylesheet" href="/static/css/styles.css"/>   
+                    <link rel="stylesheet" href="/static/css/styles.css"/>  
+                    <link rel="stylesheet" media="all" type="text/css"  href="/static/font-awesome-4.7.0/css/font-awesome.min.css"/>
                 </Head>
                 <div id="main-header">
                     <h1>Art of Bail Hawaii</h1>
