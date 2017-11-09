@@ -37,7 +37,8 @@ class AddCaseModal extends Component {
             })
         })
             .then(res => {
-                console.log('newly added case..', res)
+                this.props.addCase(res.case);
+                this.toggle();
             })
     }
 

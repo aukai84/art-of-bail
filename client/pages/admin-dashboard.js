@@ -15,6 +15,7 @@ class AdminDashboard extends Component {
         }
         this.logout = this.logout.bind(this);
         this.deleteCase = this.deleteCase.bind(this);
+        this.addCase = this.addCase.bind(this);
     }
 
     componentDidMount(){
@@ -33,6 +34,12 @@ class AdminDashboard extends Component {
         this.props.url.replace('/admin-login')
     }
 
+    addCase(newItem){
+        this.setState({
+            items: this.state.items.concat(newItem)
+        })
+    }
+
     deleteCase(deletedItem){
         this.setState({
             items: this.state.items.filter(item => {
@@ -45,7 +52,7 @@ class AdminDashboard extends Component {
         return(
             <Layout>
                 <div>This is the admin dashboard</div>
-                <AddCaseModal {...this.props}/>
+                <AddCaseModal {...this.props} addCase={this.addCase}/>
                 <Button color="secondary" size="sm" onClick={this.logout}>Sign Out</Button>
                 <Row>
                     {this.state.items.map(item => (
