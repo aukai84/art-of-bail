@@ -38,14 +38,25 @@ class EditCaseModal extends Component {
                         <Button color="danger" onClick={this.deleteCase}>Delete Case</Button>
                 </Card>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
+                    <ModalHeader>{this.props.item.defendantName} {this.props.item.caseNumber}</ModalHeader>
                     <ModalBody>
                         <div>
-                            {this.props.item.stateCaseLink}
+                            <Form>
+                                <FormGroup>
+                                    <Label for="bail-outstanding-input">Bail Outstanding</Label>
+                                    <Input id="bai-outstanding-input" type="number" defaultValue={this.props.item.totalBailOutstanding} getRef={input=>(this.totalBailOutstanding=input)} />
+                                </FormGroup>
+                                <FormGroup>
+                                    <Label for="defendant-phone-input">Defendant Phone</Label>
+                                    <Input id="defendant-phone-input" defaultValue={this.props.item.defendantPhone} type="tel" getRef={input=>(this.defendantPhone=input)} />
+                                </FormGroup>
+                                <ModalFooter>
+                                    <Button color="primary" onClick={this.editCase}>Submit</Button>
+                                    <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                                </ModalFooter>
+                            </Form>
                         </div>
                     </ModalBody>
-                    <ModalFooter>
-                        <Button color="primary" onClick={this.toggle}>Close</Button>
-                    </ModalFooter>
                 </Modal>
             </div>
         )

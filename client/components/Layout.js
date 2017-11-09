@@ -5,7 +5,6 @@ import {Container, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem} f
 import AuthService from '../utils/AuthService.js';
 const API_URL = process.env.API_URL;
 const auth = new AuthService(API_URL); 
-
 export default class Layout extends Component {
     constructor(props){
         super(props);
