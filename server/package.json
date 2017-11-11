@@ -19,7 +19,8 @@
     "passport": "^0.4.0",
     "passport-jwt": "^3.0.1",
     "passport-local": "^1.0.0",
-    "randomatic": "^2.0.0"
+    "randomatic": "^2.0.0",
+    "twilio": "^3.9.2"
   },
   "devDependencies": {
     "nodemon": "^1.12.0"

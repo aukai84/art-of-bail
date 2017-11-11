@@ -9,12 +9,19 @@ const payment = new Date(2018, 1, 20);
 const payment2 = new Date(2018, 10, 12);
 const payment3 = new Date(2018, 3, 31);
 
+/*arbitrary*/
+const courtDate1 = new Date(2017, 11, 11);
+const courtDate2 = new Date(2017, 12, 11);
 
 /*
 bailCase1: simple,
 bailCase2: simple,
 bailCase3: no cosigner info
 bailCase4: simple
+*/
+
+/* USE in courtDatesList as a courtDate object: { desc: { type: String }, date: { type: Date } }
+    
 */
 
 const bails = [
@@ -26,7 +33,8 @@ const bails = [
         stateCaseLink: 'http://ekokua.com/notRealLink',
         totalBailAmount: 5000,
         totalBailOutstanding: 3000,
-        BailPaymentDueDate: payment.getTime()
+        BailPaymentDueDate: payment,
+        courtDatesList: [{ desc: 'first court date', date: courtDate1 }, { desc: 'second court date', date: courtDate2 }]
     }),
     new BailCase({
         defendantName: 'Leia Janell',
@@ -36,7 +44,7 @@ const bails = [
         stateCaseLink: 'http://ekokua.com/notRealLink',
         totalBailAmount: 3000,
         totalBailOutstanding: 3000,
-        BailPaymentDueDate: payment2.getTime()
+        BailPaymentDueDate: payment2
     }),
     new BailCase({
         defendantName: 'Amos G',
@@ -44,7 +52,7 @@ const bails = [
         stateCaseLink: 'http://ekokua.com/notRealLink',
         totalBailAmount: 50,
         totalBailOutstanding: 0,
-        BailPaymentDueDate: payment3.getTime()
+        BailPaymentDueDate: payment3
     }),
     new BailCase({
         defendantName: 'Austin Boston',
@@ -54,7 +62,7 @@ const bails = [
         stateCaseLink: 'http://ekokua.com/notRealLink',
         totalBailAmount: 10000,
         totalBailOutstanding: 4500,
-        BailPaymentDueDate: payment.getTime()
+        BailPaymentDueDate: payment
     }),
 ];
 
