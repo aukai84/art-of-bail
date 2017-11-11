@@ -24,7 +24,6 @@ newCase: {
 }
 */
 router.post('/new-case', function(req, res, next) {
-
     let newCase = new Bail(req.body.newCase);
 
     newCase.save(function(err, result) {
@@ -33,7 +32,7 @@ router.post('/new-case', function(req, res, next) {
             res.send('error adding case.');
         } else {
             console.log('new case added.');
-            res.json({case: result, message: "new case created!"});
+            res.json({ case: result, message: "new case created!" });
         }
     });
 });
@@ -41,9 +40,37 @@ router.post('/new-case', function(req, res, next) {
 
 
 //update case
+/* 
+Pass req: updateCase { defendantName: blah, ...} 
+any field in the case model can be passed here and will be updated in the db.
+need to explore support for CRUD on courtDates array on each case.
+*/
+router.put('/:id', function(req, res, next) {
+    let updateCase = req.body.updateCase;
+
+    Bail.findByIdAndUpdate(req.params.id, updateCase, { new: true }, function(err, bail) {
+        if (err) {
+            res.status(500).send(err);
+        } else {
+            res.status(200).send(bail);
+        }
+    });
+});
 
 //delete case
-
+router.delete('/remove/:id', function(req, res, next) {
+    Bail.findByIdAndRemove(req.params.id, function(err, bail) {
+        if (err) {
+            res.status(500).send(err);
+        } else {
+            let message = {
+                message: 'delete successful',
+                id: bail.id
+            }
+            res.status(200).send(message);
+        }
+    });
+});
 
 
 
