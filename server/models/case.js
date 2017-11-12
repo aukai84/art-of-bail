@@ -7,11 +7,6 @@ courDatesList is an array of upcoming court DATES.
 totalBailOutstanding is the remaining balance on the bail due for payment. 
 */
 
-const courtDateSchema = new Schema({
-    desc: { type: String },
-    date: { type: Date }
-});
-
 const caseSchema = new Schema({
     caseNumber: { type: String, unique: true, require: true },
     defendantName: { type: String },
@@ -19,11 +14,11 @@ const caseSchema = new Schema({
     cosignerName: { type: String },
     cosignerPhone: { type: String },
     stateCaseLink: { type: String },
-    caseStartDate: { type: Date },
+    caseStartDate: { type: String },
     courtDatesList: { type: Array },
     totalBailAmount: { type: Number },
     totalBailOutstanding: { type: Number },
-    BailPaymentDueDate: { type: Date }
+    BailPaymentDueDate: { type: String }
 });
 
 //method to generate unique caseNumber
