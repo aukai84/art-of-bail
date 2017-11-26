@@ -40,10 +40,10 @@ class AdminDashboard extends Component {
         })
     }
 
-    deleteCase(deletedItem){
+    deleteCase(id){
         this.setState({
             items: this.state.items.filter(item => {
-                return item._id != deletedItem._id 
+                return item._id != id 
             })
         }) 
     }

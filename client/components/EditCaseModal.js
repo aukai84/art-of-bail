@@ -18,7 +18,11 @@ class EditCaseModal extends Component {
     }
 
     deleteCase(){
-        this.props.deleteCase(this.props.item);
+        this.props.auth.fetch(`${this.props.auth.domain}/admin/edit-cases/remove/${this.props.item._id}`, {method: 'DELETE'})
+            .then(res => {
+                this.props.deleteCase(res.id);
+                this.toggle();
+            })
     }
 
     render(){

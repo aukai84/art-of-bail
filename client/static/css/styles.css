@@ -3,9 +3,25 @@ p {
     font-size: .75rem;
 }
 
+#nav-header {
+    background-color: white;
+}
+
+#login-container {
+    height: 40px;
+    width: 100%;
+    padding-right: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.login-link {
+    float: right;
+}
+
 .navbar {
     background-color: white;
-    color: black;
+    color: white;
 }
 
 .navbar-toggler {
@@ -42,6 +58,13 @@ p {
     color: green;
 }
 
+/*#splash-container {
+    background-image: url('/static/images/sunset.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 60%;
+}*/
+
 .home-page-wrapper{
     padding: 4rem 0 4rem 0;
 }
@@ -62,6 +85,11 @@ p {
 
 .dropdown-item {
     text-align: center;
+}
+
+#request-form-container {
+    padding: 5%;
+    background-color: grey;
 }
 
 #loginForm {

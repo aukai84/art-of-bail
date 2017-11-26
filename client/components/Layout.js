@@ -33,35 +33,34 @@ export default class Layout extends Component {
                     <link rel="stylesheet" href="/static/css/styles.css"/>  
                     <link rel="stylesheet" media="all" type="text/css"  href="/static/font-awesome-4.7.0/css/font-awesome.min.css"/>
                 </Head>
-                <div id="main-header">
-                    <h1>Art of Bail Hawaii</h1>
-                </div>{
-                auth.loggedIn()?(<Link href="/admin-dashboard">King Arthur's Dashboard</Link> ) : 
-                (<Link href="/admin-login">Login</Link>)
-                }
-                <Navbar color="faded" full="true" light toggleable>
-                  <NavbarToggler right onClick={this.toggleNav} />
-                  <NavbarBrand href="/">Logo</NavbarBrand>
-                  <Collapse isOpen={this.state.isOpen} className="navbar-toggle" padding-right="1rem" navbar>
-                    <Nav className="ml-auto" navbar>
-                      <NavItem> 
-                          <Link href="/"><a className="nav-link">Home</a></Link>
-                      </NavItem>
-                      <NavItem>
-                              <Link href="/about-us"><a className="nav-link">About Us</a></Link>
-                      </NavItem>
-                      <NavItem>
-                              <Link href="/find-your-case"><a className="nav-link">Find Your Case</a></Link>
-                      </NavItem>
-                      <NavItem>
-                          <Link href="/contact-us"><a className="nav-link">Contact Us</a></Link>
-                      </NavItem>
-                    </Nav>
-                  </Collapse>
-                </Navbar>
-                <Container>
+                <div id="nav-header">
+                    <div id="login-container" >
+                        {auth.loggedIn()?(<Link href="/admin-dashboard"><a className="login-link">Admin</a></Link> ) : 
+                        (<Link href="/admin-login"><a className="login-link">Login</a></Link>)
+                        }
+                    </div>
+                    <Navbar color="faded" full="true" light toggleable>
+                      <NavbarToggler right onClick={this.toggleNav} />
+                      <NavbarBrand href="/">Art of Bail Hawaii</NavbarBrand>
+                      <Collapse isOpen={this.state.isOpen} className="navbar-toggle" padding-right="1rem" navbar>
+                        <Nav className="ml-auto" navbar>
+                          <NavItem> 
+                              <Link href="/"><a className="nav-link">Home</a></Link>
+                          </NavItem>
+                          <NavItem>
+                                  <Link href="/about-us"><a className="nav-link">About Us</a></Link>
+                          </NavItem>
+                          <NavItem>
+                                  <Link href="/find-your-case"><a className="nav-link">Find Your Case</a></Link>
+                          </NavItem>
+                          <NavItem>
+                              <Link href="/contact-us"><a className="nav-link">Contact Us</a></Link>
+                          </NavItem>
+                        </Nav>
+                      </Collapse>
+                    </Navbar>
+                </div>
                     {this.props.children}
-                </Container> 
             </div>
         )
     }
