@@ -1,4 +1,8 @@
 Art of Bail Notes
+**MOVE TO PRODUCTION NOTES**
+- disable twilio trail mode. change token in config.js to production twilio key.
+- change send-sms.js to use defendantPhone from DB not Keegan's number.
+
 
 **HOME PAGE**
 
