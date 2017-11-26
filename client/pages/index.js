@@ -19,6 +19,11 @@ class Index extends Component {
     render(){
         return (
             <Layout>
+                <div id="splash-container">
+                    <div id="splash-info">
+                        <h3>Welcome to Art of Bail Hawaii</h3>
+                    </div>
+                </div>
                 <Row>
                     <Col xs="12" sm="12" md="8" lg="8" xl="8">
                         <div id="home-info-container">
@@ -31,7 +36,7 @@ class Index extends Component {
                                 <Label for="clientName">Your Name<span className="required">*</span></Label>
                                 <InputGroup>
                                     <InputGroupAddon><i className="fa fa-user-circle"></i></InputGroupAddon>
-                                    <Input type="text" id="clienttName" placeholder="Enter Your Name"/>
+                                    <Input type="text" id="clientName" placeholder="Enter Your Name"/>
                                 </InputGroup>
                             </FormGroup>
                             <FormGroup>
@@ -62,7 +67,8 @@ class Index extends Component {
                             <Button color="primary" onClick={this.handleSubmit} block>CONTACT US</Button>
                         </Form>
                     </Col>
-                </Row>
+                    </Row>
+
             </Layout>
         )
     }
