@@ -12,7 +12,9 @@ class FindYourCase extends Component {
         super(props);
         this.state = {
             isLoading: false,
-            case: null
+            case: null,
+            errorMessage: null,
+            searchEmpty: false 
         }
         this.findCase= this.findCase.bind(this);
     }
@@ -26,9 +28,26 @@ class FindYourCase extends Component {
         let caseNumber = this.caseNumber.value
         auth.fetch(`${auth.domain}/client-portal/${caseNumber}`,{method: 'GET'})
             .then(res => {
+                if(res.case){
+                    this.setState({
+                        isLoading: false,
+                        case: res.case,
+                        searchEmpty: false,
+                        searchError: false
+                    })
+                } else {
+                    console.log(res)
+                    this.setState({
+                        searchEmpty: true,
+                        isLoading: false,
+                        case: null
+                    })
+                }
+            })
+            .catch(err => {
                 this.setState({
                     isLoading: false,
-                    case: res.case
+                    searchError: err
                 })
             })
     }
@@ -48,6 +67,7 @@ class FindYourCase extends Component {
                             </FormGroup>
                             <Button onClick={this.findCase}>Submit</Button>
                         </Form>
+                        {this.state.searchEmpty ? (<p>Cannot find your case</p>) : (<div></div>)}
                         <div id="case-window-container">
                             {
                                 this.state.case ? (
@@ -72,7 +92,7 @@ class FindYourCase extends Component {
                                             <div class="court-dates-list">
                                                 <p>Date {item.date}</p>
                                                 <p>Time {item.time}</p>
-                                                <p>Description {item.description}</p>
+                                                <p>Description {item.desc}</p>
                                             </div>
                                             ))}
                                         </div>
