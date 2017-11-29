@@ -16,6 +16,7 @@ class AdminDashboard extends Component {
         this.logout = this.logout.bind(this);
         this.deleteCase = this.deleteCase.bind(this);
         this.addCase = this.addCase.bind(this);
+        this.editCase = this.editCase.bind(this);
     }
 
     componentDidMount(){
@@ -48,6 +49,19 @@ class AdminDashboard extends Component {
         }) 
     }
 
+    editCase(editedItem){
+        this.setState({
+            items: this.state.items.map(item => {
+                if(item._id === editedItem._id){
+                    item = editedItem;
+                    return item;
+                } else {
+                    return item;
+                }
+            })
+        })
+    }
+
     render(){
         return(
             <Layout>
@@ -57,7 +71,7 @@ class AdminDashboard extends Component {
                 <Row>
                     {this.state.items.map(item => (
                         <Col className="edit-modal-container" xs="12" sm="6" md="6" lg="4" xl="4">
-                            <EditCaseModal {...this.props} deleteCase={this.deleteCase} item={item}/>
+                            <EditCaseModal {...this.props} editCase={this.editCase} deleteCase={this.deleteCase} item={item}/>
                         </Col>
                     ))}
                 </Row>

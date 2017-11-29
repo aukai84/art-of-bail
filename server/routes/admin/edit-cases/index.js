@@ -47,7 +47,7 @@ need to explore support for CRUD on courtDates array on each case.
 */
 router.put('/:id', function(req, res, next) {
     let updateCase = req.body.updateCase;
-
+    console.log(updateCase)
     Bail.findByIdAndUpdate(req.params.id, updateCase, { new: true }, function(err, bail) {
         if (err) {
             res.status(500).send(err);

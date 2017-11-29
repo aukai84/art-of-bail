@@ -9,6 +9,7 @@ class EditCaseModal extends Component {
         }
         this.toggle = this.toggle.bind(this);
         this.deleteCase = this.deleteCase.bind(this);
+        this.editCase = this.editCase.bind(this);
     }
 
     toggle(){
@@ -21,6 +22,23 @@ class EditCaseModal extends Component {
         this.props.auth.fetch(`${this.props.auth.domain}/admin/edit-cases/remove/${this.props.item._id}`, {method: 'DELETE'})
             .then(res => {
                 this.props.deleteCase(res.id);
+            })
+    }
+
+    editCase(e){
+        e.preventDefault();
+        this.props.auth.fetch(`${this.props.auth.domain}/admin/edit-cases/${this.props.item._id}`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                updateCase: {
+                    totalBailOutstanding: this.totalBailOutstanding.value,
+                    defendantPhone: this.defendantPhone.value
+                }
+            }) 
+        })
+            .then(res => {
+                console.log('edited item', res)
+                this.props.editCase(res);
                 this.toggle();
             })
     }

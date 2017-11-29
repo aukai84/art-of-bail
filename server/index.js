@@ -2,8 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const schedule = require('node-schedule');
-const sendSMS = require('./services/send-sms.js');
+//const schedule = require('node-schedule');
+//const sendSMS = require('./services/send-sms.js');
 
 const app = express();
 
@@ -21,10 +21,10 @@ app.listen(port, function() {
 });
 
 
-const rule = new schedule.RecurrenceRule();
+/*const rule = new schedule.RecurrenceRule();
 rule.hour = 2;
 //rule.minute = ??; for testing
 
 const j = schedule.scheduleJob(rule, function() {
     sendSMS();
-});
+});*/
