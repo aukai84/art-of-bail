@@ -3,6 +3,8 @@ import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 import {Container, Row, Col, Form, FormGroup, Label, Input, InputGroup, InputGroupAddon, FormText, Button} from 'reactstrap';
 import Layout from '../components/Layout.js';
+import CarouselComponent from '../components/Carousel.js';
+
 let API_URL = process.env.API_URI;
 console.log('this is the api...', API_URL)
 
@@ -24,10 +26,12 @@ class Index extends Component {
                         <h3>Welcome to Art of Bail Hawaii</h3>
                     </div>
                 </div>
+                <Col>
+                </Col>
                 <Row>
-                    <Col xs="12" sm="12" md="8" lg="8" xl="8">
+                    <Col xs="12" sm="12" md="12" lg="12" xl="12">
                         <div id="home-info-container">
-                            This will be the information about arthur, getting a quote, etc
+                            This will be the information about arthur, getting a quote, mission statement?, etc
                         </div>
                     </Col>
                     <Col xs="12" sm="12" md="4" lg="4" xl="4">

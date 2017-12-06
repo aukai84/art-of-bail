@@ -3,8 +3,10 @@ import Link from 'next/link';
 import Head from 'next/head';
 import {Container, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem} from 'reactstrap';
 import AuthService from '../utils/AuthService.js';
+
 const API_URL = process.env.API_URL;
 const auth = new AuthService(API_URL); 
+
 export default class Layout extends Component {
     constructor(props){
         super(props);
@@ -23,7 +25,6 @@ export default class Layout extends Component {
 
     render(){
 
-        console.log('this is auth logged in?..', auth.loggedIn())
         return (
             <div>
                 <Head>
@@ -34,12 +35,7 @@ export default class Layout extends Component {
                     <link rel="stylesheet" media="all" type="text/css"  href="/static/font-awesome-4.7.0/css/font-awesome.min.css"/>
                 </Head>
                 <div id="nav-header">
-                    <div id="login-container" >
-                        {auth.loggedIn()?(<Link href="/admin-dashboard"><a className="login-link">Admin</a></Link> ) : 
-                        (<Link href="/admin-login"><a className="login-link">Login</a></Link>)
-                        }
-                    </div>
-                    <Navbar color="faded" full="true" light toggleable>
+                    <Navbar fixed="top" color="faded" full="true" light toggleable>
                       <NavbarToggler right onClick={this.toggleNav} />
                       <NavbarBrand href="/">Art of Bail Hawaii</NavbarBrand>
                       <Collapse isOpen={this.state.isOpen} className="navbar-toggle" padding-right="1rem" navbar>
@@ -56,11 +52,16 @@ export default class Layout extends Component {
                           <NavItem>
                               <Link href="/contact-us"><a className="nav-link">Contact Us</a></Link>
                           </NavItem>
+                          <NavItem>
+                              {
+                                auth.loggedIn()?(<Link href="/admin-dashboard"><a className="nav-link">Admin</a></Link>) : (<Link href="/admin-login"><a className="nav-link">Login</a></Link>)
+                              }
+                          </NavItem>
                         </Nav>
                       </Collapse>
                     </Navbar>
                 </div>
-                    {this.props.children}
+                        {this.props.children}
             </div>
         )
     }
