@@ -13,6 +13,7 @@ class AboutUs extends Component {
         return(
             <Layout>
                 <div>
+                    <p>Art of Bail, we'll bail you out</p>
                     This is the About us page
                 </div>
             </Layout>

@@ -3,25 +3,30 @@ p {
     font-size: .75rem;
 }
 
-#nav-header {
-    background-color: white;
-}
-
-#login-container {
-    height: 40px;
+#splash-container {
+    height: 444px;
     width: 100%;
-    padding-right: 24px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 140px;
+    padding-bottom: 80px;
+    background-image: url('/static/images/pastel.jpg');
+    background-size: cover;
 }
 
-.login-link {
-    float: right;
+#splash-info {
+    margin: auto;
+    text-align: center;
+}
+
+#home-info-container {
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    padding-top: 80px;
 }
 
 .navbar {
-    background-color: white;
-    color: white;
+    background-color: rgba(22, 22, 55, .5);
+    height: 60px;
 }
 
 .navbar-toggler {
@@ -58,22 +63,6 @@ p {
     color: green;
 }
 
-/*#splash-container {
-    background-image: url('/static/images/sunset.jpg');
-    background-size: cover;
-    width: 100%;
-    height: 60%;
-}*/
-
-.home-page-wrapper{
-    padding: 4rem 0 4rem 0;
-}
-
-.home-page-info {
-    text-align: center;
-    padding: 1rem;
-}
-
 .dropdown-toggle {
     width: 100%;
 }
@@ -104,4 +93,8 @@ p {
 .edit-modal-container {
     padding-top: 15px;
     padding-bottom: 15px;
+}
+
+.error-message {
+    color: red
 }
