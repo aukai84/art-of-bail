@@ -30,15 +30,15 @@ export default class Layout extends Component {
                 <Head>
                     <title>Art's BBC</title>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                    <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
-                    <link rel="stylesheet" href="/static/css/styles.css"/>  
+                    <link rel="stylesheet" media="all" type="text/css" href="/static/css/bootstrap.min.css"/>
                     <link rel="stylesheet" media="all" type="text/css"  href="/static/font-awesome-4.7.0/css/font-awesome.min.css"/>
+                    <link rel="stylesheet" href="/static/css/styles.css"/>  
                 </Head>
-                <div id="nav-header">
-                    <Navbar fixed="top" color="faded" full="true" light toggleable>
-                      <NavbarToggler right onClick={this.toggleNav} />
+                <div>
+                    <Navbar className="navbar-dark" style={{backgroundColor: '#25274D'}}  expand="md">
                       <NavbarBrand href="/">Art of Bail Hawaii</NavbarBrand>
-                      <Collapse isOpen={this.state.isOpen} className="navbar-toggle" padding-right="1rem" navbar>
+                      <NavbarToggler right onClick={this.toggleNav} className="mr-2"/>
+                      <Collapse isOpen={this.state.isOpen} padding-right="1rem" navbar>
                         <Nav className="ml-auto" navbar>
                           <NavItem> 
                               <Link href="/"><a className="nav-link">Home</a></Link>
@@ -66,4 +66,3 @@ export default class Layout extends Component {
         )
     }
 }
-

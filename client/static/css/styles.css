@@ -24,11 +24,6 @@ p {
     padding-top: 80px;
 }
 
-.navbar {
-    background-color: rgba(22, 22, 55, .5);
-    height: 60px;
-}
-
 .navbar-toggler {
     border: none;
 }
@@ -36,10 +31,6 @@ p {
 .navbar-toggler-icon {
     width: 25px;
     height: 25px;
-}
-
-.nav-item {
-    color: red;
 }
 
 .nav-link {

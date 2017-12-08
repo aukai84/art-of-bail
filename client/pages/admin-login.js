@@ -23,6 +23,7 @@ class AdminLogin extends Component {
 
     handleSubmit(e){
         e.preventDefault();
+        console.log('username', this.username.value)
         auth.login(this.username.value, this.password.value)
             .then(res => {
                 this.props.url.replace('/admin-dashboard');
