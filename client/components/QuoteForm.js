@@ -17,38 +17,34 @@ class QuoteForm extends Component {
         return(
             <Form id="request-form-container">
                 <FormGroup>
-                    <Label for="clientName">Your Name<span className="required">*</span></Label>
+                    <Label for="clientName">Cosigner Full Name<span className="required">*</span></Label>
                     <InputGroup>
-                        <InputGroupAddon><i className="fa fa-user-circle"></i></InputGroupAddon>
-                        <Input type="text" id="clientName" placeholder="Enter Your Name"/>
+                        <Input bsSize="md" type="text" id="clientName" placeholder="Name"/>
                     </InputGroup>
                 </FormGroup>
                 <FormGroup>
-                    <Label for="clientEmail">Your Email<span className="required">*</span></Label>
+                    <Label for="clientEmail">Cosigner Email<span className="required">*</span></Label>
                     <InputGroup>
-                        <InputGroupAddon><i className="fa fa-envelope"></i></InputGroupAddon>
-                        <Input type="email" id="clientEmail" placeholder="Enter Your Email"/>
+                        <Input type="email" id="clientEmail" placeholder="Email"/>
                     </InputGroup>
                 </FormGroup>
                 <FormGroup>
-                    <Label for="clientPhone">Phone Number<span className="required">*</span></Label>
+                    <Label for="clientPhone">Cosigner Phone Number<span className="required">*</span></Label>
                     <InputGroup>
-                        <InputGroupAddon><i className="fa fa-phone-square fa-lg"></i></InputGroupAddon>
-                        <Input type="tel" id="clientPhone" placeholder="(xxx)xxx-xxxx"/>
+                        <Input type="tel" id="clientPhone" placeholder="Phone Number"/>
                     </InputGroup>
                 </FormGroup>
                 <FormGroup>
-                    <Label for="defendantName">Defendant's Name<span className="required">*</span></Label>
+                    <Label for="defendantName">Defendant's Full Name<span className="required">*</span></Label>
                     <InputGroup>
-                        <InputGroupAddon><i className="fa fa-user-circle"></i></InputGroupAddon>
-                        <Input type="text" id="defendantName" placeholder="Enter Defendant's Name"/>
+                        <Input type="text" id="defendantName" placeholder="Defendant's Name"/>
                     </InputGroup>
                 </FormGroup>
                 <FormGroup>
                     <Label for="clientMessage">Message</Label>
                     <Input type="textarea" id="clientMessage" placeholder="Message..."/>
                 </FormGroup>
-                <Button color="primary" onClick={this.handleSubmit} block>CONTACT US</Button>
+                <Button style={{backgroundColor: "#0a1612"}} onClick={this.handleSubmit} block>CONTACT US</Button>
             </Form>
             
         )

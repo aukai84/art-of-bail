@@ -24,7 +24,6 @@ class Index extends Component {
             <Layout>
                 <div id="splash-container">
                     <div id="splash-info">
-                        <h3>Welcome to Art of Bail Hawaii</h3>
                     </div>
                 </div>
                     <Row>
@@ -33,13 +32,22 @@ class Index extends Component {
                                 This will be the information about arthur, getting a quote, mission statement?, etc
                             </div>
                         </Col>
-                    </Row>
-                    <Row>
-                        <Col xs="12" sm="12" md="8" lg="8" xl="8">
-                            <h2>Info Statement about arthurs website</h2>
+                        <Col xs="12" sm="12" md="4" lg="4" xl="4">
+                            <div className="home-column-container">First Column info</div>
                         </Col>
                         <Col xs="12" sm="12" md="4" lg="4" xl="4">
+                            <div className="home-column-container">Second Column info</div>
+                        </Col>
+                        <Col xs="12" sm="12" md="4" lg="4" xl="4">
+                            <div className="home-column-container">Third Column info</div>
+                        </Col>
+                    </Row>
+                    <Row id="quote-row">
+                        <Col xs="12" sm="12" md="6" lg="5" xl="4">
                             <QuoteForm />
+                        </Col>
+                        <Col xs="12" sm="12" md="6" lg="7" xl="8">
+                            <h2>Info Statement about arthurs website</h2>
                         </Col>
                     </Row>
             </Layout>

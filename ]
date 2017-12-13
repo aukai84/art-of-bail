@@ -1,0 +1,103 @@
+p {
+    margin-bottom: .5rem;
+    font-size: .75rem;
+}
+
+label {
+    font-size: 13px;
+}
+
+
+#splash-container {
+    height: 532px;
+    width: 100%;
+    padding-top: 140px;
+    padding-bottom: 80px;
+    background-image: url('/static/images/jail.jpg');
+    background-size: auto;
+}
+
+#splash-info {
+    margin: auto;
+    text-align: center;
+}
+
+#home-info-container {
+    height: 305px;
+    width: 100%;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.home-column-container {
+    height: 150px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#main-content-container {
+    /*main body styling*/
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem; 
+}
+
+
+.dropdown-menu {
+    border: none;
+    font-family: sans-serif;
+    color: green;
+}
+
+.dropdown-toggle {
+    width: 100%;
+}
+
+.dropdown-menu {
+    align-items: center;
+    width: 100%;
+}
+
+.dropdown-item {
+    text-align: center;
+}
+
+#quote-row {
+    padding: 50px;
+    background-color: #def2f1;
+}
+
+#request-form-container {
+    padding: 5%;
+    background-color: #feffff;
+}
+
+
+#loginForm {
+    width: 75%;
+    margin: auto;
+}
+
+.loginButton {
+    width: 100%;
+}
+
+.edit-modal-container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.error-message {
+    color: red
+}

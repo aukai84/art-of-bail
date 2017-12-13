@@ -36,16 +36,18 @@ class AdminLogin extends Component {
     render(){
         return(
             <Layout>
-                <div>This is the admin login page</div>
-                <Form id="loginForm">
-                    <FormGroup>
-                        <Input type="text" placeholder="Username" getRef={input=>(this.username = input)}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Input type="password" placeholder="Password" getRef={input=>(this.password= input)}/>
-                    </FormGroup>
-                    <Button className="loginButton" color="primary" onClick={this.handleSubmit}>Log in</Button>
-                </Form>
+                <div id="login-page-container">
+                    <div>This is the admin login page</div>
+                    <Form id="loginForm">
+                        <FormGroup>
+                            <Input type="text" placeholder="Username" getRef={input=>(this.username = input)}/>
+                        </FormGroup>
+                        <FormGroup>
+                            <Input type="password" placeholder="Password" getRef={input=>(this.password= input)}/>
+                        </FormGroup>
+                        <Button className="loginButton" color="primary" onClick={this.handleSubmit}>Log in</Button>
+                    </Form>
+                </div>
             </Layout>
         )
     }
