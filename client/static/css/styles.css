@@ -1,10 +1,10 @@
-@font-face {
-}
-
-html, body {
-    font-family: 'Roboto', sans-serif;
-    height: 100%;
-}
+/*Professional and Modern Color Scheme {
+ *  Screen: #c6c1c0,
+ *  Steel: #0a1612,
+ *  Denim: #1a2930,
+ *  Marigold: #f7ce3e
+ * }
+ */
 
 p {
     margin-bottom: .5rem;
@@ -15,28 +15,6 @@ label {
     font-size: 13px;
 }
 
-#layout {
-    min-height: 100%;
-}
-
-#content-container {
-    height: 100%;
-}
-
-#splash-container {
-    height: 532px;
-    width: 100%;
-    padding-top: 140px;
-    padding-bottom: 80px;
-    background-image: url('/static/images/suit.jpg');
-    background-size: cover;
-}
-
-#splash-info {
-    margin: auto;
-    text-align: center;
-}
-
 #home-info-container {
     height: 305px;
     width: 100%;
@@ -44,7 +22,8 @@ label {
     padding-top: 80px;
 }
 
-.home-column-container {
+.home-column-containers {
+    background-color: #f7ce3e;
     height: 150px;
     text-align: center;
     vertical-align: middle;
@@ -64,8 +43,6 @@ label {
 }
 
 .nav-link {
-    padding-right: 1rem;
-    padding-left: 1rem; 
 }
 
 
@@ -110,9 +87,9 @@ label {
     width: 100%;
 }
 
-
-#loginForm {
-    width: 75%;
+#login-form {
+    background-color: #f5f5f5; 
+    padding: 40px;
     margin: auto;
 }
 

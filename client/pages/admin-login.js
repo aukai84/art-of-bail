@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout.js';
+import loginStyles from '../styles/loginStyles';
 import {Container, Row, Col, Form, FormGroup, FormText, Label, Input, Button} from 'reactstrap';
 import AuthService from '../utils/AuthService.js';
+console.log(loginStyles)
 
 const API_URL = process.env.API_URL;
 const auth = new AuthService(API_URL);
@@ -37,17 +39,22 @@ class AdminLogin extends Component {
         return(
             <Layout>
                 <div id="login-page-container">
-                    <div>This is the admin login page</div>
-                    <Form id="loginForm">
-                        <FormGroup>
-                            <Input type="text" placeholder="Username" getRef={input=>(this.username = input)}/>
-                        </FormGroup>
-                        <FormGroup>
-                            <Input type="password" placeholder="Password" getRef={input=>(this.password= input)}/>
-                        </FormGroup>
-                        <Button className="loginButton" color="primary" onClick={this.handleSubmit}>Log in</Button>
-                    </Form>
+                    <h1>This is the admin login page</h1>
+                    <Row>
+                        <Col xs="12" sm="12" md="4" lg="4" xl="4">
+                            <Form id="login-form">
+                                <FormGroup>
+                                    <Input type="text" placeholder="Username" getRef={input=>(this.username = input)}/>
+                                </FormGroup>
+                                <FormGroup>
+                                    <Input type="password" placeholder="Password" getRef={input=>(this.password= input)}/>
+                                </FormGroup>
+                                <Button className="loginButton" color="primary" onClick={this.handleSubmit}>Log in</Button>
+                            </Form>
+                        </Col>
+                    </Row>
                 </div>
+                <style jsx>{loginStyles}</style>
             </Layout>
         )
     }

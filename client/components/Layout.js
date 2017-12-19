@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import {Container, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem} from 'reactstrap';
+import layoutStyles from '../styles/layoutStyles.js';
 import AuthService from '../utils/AuthService.js';
 
 const API_URL = process.env.API_URL;
@@ -30,12 +31,12 @@ export default class Layout extends Component {
                 <Head>
                     <title>Art's BBC</title>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+                    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
                     <link rel="stylesheet" media="all" type="text/css" href="/static/css/bootstrap.min.css"/>
                     <link rel="stylesheet" media="all" type="text/css"  href="/static/font-awesome-4.7.0/css/font-awesome.min.css"/>
                     <link rel="stylesheet" href="/static/css/styles.css"/>  
                 </Head>
-                    <Navbar className="navbar-dark" style={{backgroundColor: "#0a1612"}} expand="md">
+                    <Navbar className="navbar-dark" expand="md">
                       <NavbarBrand href="/">Art of Bail Hawaii</NavbarBrand>
                       <NavbarToggler right onClick={this.toggleNav} className="mr-2"/>
                       <Collapse isOpen={this.state.isOpen} padding-right="1rem" navbar>
@@ -52,7 +53,7 @@ export default class Layout extends Component {
                           <NavItem>
                               <Link prefetch href="/contact-us"><a className="nav-link">Contact Us</a></Link>
                           </NavItem>
-                          <NavItem>
+                          <NavItem className="nav-button-login"> 
                               {
                                 auth.loggedIn()?(<Link prefetch href="/admin-dashboard"><a className="nav-link">Admin</a></Link>) : (<Link prefetch href="/admin-login"><a className="nav-link">Login</a></Link>)
                               }
@@ -66,6 +67,7 @@ export default class Layout extends Component {
                 <div id="footer">
                     <p>Footer information</p>
                 </div>
+                <style jsx global>{layoutStyles}</style>
           </div>
         )
     }

@@ -4,7 +4,7 @@ import fetch from 'isomorphic-unfetch';
 import {Container, Row, Col, Form, FormGroup, Label, Input, InputGroup, InputGroupAddon, FormText, Button} from 'reactstrap';
 import Layout from '../components/Layout.js';
 import QuoteForm from '../components/QuoteForm.js';
-import CarouselComponent from '../components/Carousel.js';
+import homePageStyles from '../styles/homePageStyles.js';
 
 let API_URL = process.env.API_URI;
 console.log('this is the api...', API_URL)
@@ -23,9 +23,15 @@ class Index extends Component {
         return (
             <Layout>
                 <div id="splash-container">
-                    <div id="splash-info">
+                    <div id="splash-info-container">
+                        <div id="splash-info">
+                            <h1>Art of Bail</h1>
+                            <p>Hawaii's Premiere Bail Bonds Company</p>
+                            <Button className="contact-us-button">Contact Us</Button>
+                        </div>
                     </div>
                 </div>
+                <div>
                     <Row>
                         <Col xs="12" sm="12" md="12" lg="12" xl="12">
                             <div id="home-info-container">
@@ -33,13 +39,13 @@ class Index extends Component {
                             </div>
                         </Col>
                         <Col xs="12" sm="12" md="4" lg="4" xl="4">
-                            <div className="home-column-container">First Column info</div>
+                            <div className="home-column-containers">First Column info</div>
                         </Col>
                         <Col xs="12" sm="12" md="4" lg="4" xl="4">
-                            <div className="home-column-container">Second Column info</div>
+                            <div className="home-column-containers">Second Column info</div>
                         </Col>
                         <Col xs="12" sm="12" md="4" lg="4" xl="4">
-                            <div className="home-column-container">Third Column info</div>
+                            <div className="home-column-containers">Third Column info</div>
                         </Col>
                     </Row>
                     <Row id="quote-row">
@@ -50,6 +56,8 @@ class Index extends Component {
                             <h2>Info Statement about arthurs website</h2>
                         </Col>
                     </Row>
+                </div>
+                <style jsx global>{homePageStyles}</style>
             </Layout>
         )
     }
