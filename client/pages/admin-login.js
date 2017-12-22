@@ -13,8 +13,13 @@ const auth = new AuthService(API_URL);
 class AdminLogin extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            username: '',
+            password: ''
+        }
+        this.handleUserChange = this.handleUserChange.bind(this);
+        this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
     }
 
     componentDidMount(){
@@ -23,10 +28,23 @@ class AdminLogin extends Component {
         } 
     }
 
+    handleUserChange(e){
+        e.preventDefault();
+        this.setState({
+            username: e.target.value
+        })
+    }
+
+    handlePasswordChange(e){
+        e.preventDefault();
+        this.setState({
+            password: e.target.value
+        })
+    }
+
     handleSubmit(e){
         e.preventDefault();
-        console.log('username', this.username.value)
-        auth.login(this.username.value, this.password.value)
+        auth.login(this.state.username, this.state.password)
             .then(res => {
                 this.props.url.replace('/admin-dashboard');
             })
@@ -43,15 +61,15 @@ class AdminLogin extends Component {
                         <h3 id="login-panel-header">Login as admin</h3>
                         <Form id="login-form">
                             <FormGroup>
-                                <Input type="text" placeholder="Username" getRef={input=>(this.username = input)}/>
+                                <Input className="login-input" type="text" placeholder="Username" onChange={this.handleUserChange}/>
                             </FormGroup>
                             <FormGroup>
-                                <Input type="password" placeholder="Password" getRef={input=>(this.password= input)}/>
+                                <Input className="login-input" type="password" placeholder="Password" onChange={this.handlePasswordChange}/>
                             </FormGroup>
                             <Button className="loginButton" onClick={this.handleSubmit}>Log In</Button>
                         </Form>
                         <Link href="/">
-                            <div className="login-page-route-home">Not an admin? Click here</div>
+                            <div className="login-page-route-home">Not an admin? <span className="click-here">Click here</span></div>
                         </Link>                            
                     </div>
                 </div>

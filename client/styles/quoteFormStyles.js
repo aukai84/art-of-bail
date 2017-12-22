@@ -9,7 +9,7 @@ export default css`
     }
 
     .quote-form-button {
-        background-color: #0a1612;
+        background-color: #1a2930;
     }
 
     .required {

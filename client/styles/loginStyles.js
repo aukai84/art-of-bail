@@ -19,6 +19,7 @@ export default css`
 }
 
 #login-panel-header {
+    color: #28434f; 
     margin: 0;
 }
 
@@ -28,17 +29,33 @@ export default css`
     padding: 40px;
 }
 
+.login-input {
+    border-radius: 0;
+    border: 1px solid #cbcbc2;
+    background-color: #f5f5f5;
+}
+
 .loginButton {
     width: 100%;
     border-radius: 0;
-    background-color: #0a1612;
+    background-color: #1a2930;
 }
 
 .login-page-route-home {
     background-color: #dbdbdb;
     padding: 20px;
     border-top: 1px solid #b5b5b5;
+    color: #777777;
 }
+
+    .click-here {
+        color: #304c59;
+    }
+
+.login-page-route-home:hover {
+    cursor: pointer;
+}
+
 
 @media screen and (max-width: 630px) {
     #login-page-container {
