@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Form, FormGroup, Label, Input, InputGroup, InputGroupAddon, FormText, Button} from 'reactstrap';
+import quoteFormStyles from '../styles/quoteFormStyles.js';
 
 let API_URL = process.env.API_URI;
 
@@ -44,9 +45,9 @@ class QuoteForm extends Component {
                     <Label for="clientMessage">Message</Label>
                     <Input type="textarea" id="clientMessage" placeholder="Message..."/>
                 </FormGroup>
-                <Button style={{backgroundColor: "#0a1612"}} onClick={this.handleSubmit} block>CONTACT US</Button>
+                <Button className="quote-form-button" onClick={this.handleSubmit} block>CONTACT US</Button>
+                <style jsx global>{quoteFormStyles}</style>
             </Form>
-            
         )
     }
 }

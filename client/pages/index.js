@@ -12,11 +12,18 @@ console.log('this is the api...', API_URL)
 class Index extends Component {
     constructor(props){
         super(props);
+        this.state = {}
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(){
         console.log('requesting bail from arthur...')
+    }
+
+    imageLoaded = () => {
+        this.setState({
+            imagePath: "/static/images/suit-min-min.jpg"
+        })
     }
 
     render(){

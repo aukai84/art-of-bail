@@ -39,22 +39,23 @@ class AdminLogin extends Component {
         return(
             <Layout>
                 <div id="login-page-container">
-                    <h1>This is the admin login page</h1>
-                    <Row>
-                        <Col xs="12" sm="12" md="4" lg="4" xl="4">
-                            <Form id="login-form">
-                                <FormGroup>
-                                    <Input type="text" placeholder="Username" getRef={input=>(this.username = input)}/>
-                                </FormGroup>
-                                <FormGroup>
-                                    <Input type="password" placeholder="Password" getRef={input=>(this.password= input)}/>
-                                </FormGroup>
-                                <Button className="loginButton" color="primary" onClick={this.handleSubmit}>Log in</Button>
-                            </Form>
-                        </Col>
-                    </Row>
+                    <div id="login-panel">
+                        <h3 id="login-panel-header">Login as admin</h3>
+                        <Form id="login-form">
+                            <FormGroup>
+                                <Input type="text" placeholder="Username" getRef={input=>(this.username = input)}/>
+                            </FormGroup>
+                            <FormGroup>
+                                <Input type="password" placeholder="Password" getRef={input=>(this.password= input)}/>
+                            </FormGroup>
+                            <Button className="loginButton" onClick={this.handleSubmit}>Log In</Button>
+                        </Form>
+                        <Link href="/">
+                            <div className="login-page-route-home">Not an admin? Click here</div>
+                        </Link>                            
+                    </div>
                 </div>
-                <style jsx>{loginStyles}</style>
+                <style jsx global>{loginStyles}</style>
             </Layout>
         )
     }

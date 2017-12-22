@@ -33,7 +33,6 @@ export default class Layout extends Component {
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
                     <link rel="stylesheet" media="all" type="text/css" href="/static/css/bootstrap.min.css"/>
-                    <link rel="stylesheet" media="all" type="text/css"  href="/static/font-awesome-4.7.0/css/font-awesome.min.css"/>
                     <link rel="stylesheet" href="/static/css/styles.css"/>  
                 </Head>
                     <Navbar className="navbar-dark" expand="md">
