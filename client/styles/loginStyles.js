@@ -41,6 +41,14 @@ export default css`
     background-color: #1a2930;
 }
 
+.login-error-message {
+    color: #ff2b2b;
+    position: absolute;
+    line-height: 15px;
+    font-size: .9em;
+    margin-top: 10px;
+}
+
 .login-page-route-home {
     background-color: #dbdbdb;
     padding: 20px;

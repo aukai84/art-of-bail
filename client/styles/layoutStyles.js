@@ -6,6 +6,14 @@ export default css `
         font-family: 'Open Sans', sans-serif;
     }
 
+input {
+    border-radius: 0 !important;
+}
+
+button {
+    border-radius: 0 !important;
+}
+
     #layout {
         min-height: 100%;
     }

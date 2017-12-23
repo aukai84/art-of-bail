@@ -15,7 +15,8 @@ class AdminLogin extends Component {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            loginError: false
         }
         this.handleUserChange = this.handleUserChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
@@ -49,7 +50,10 @@ class AdminLogin extends Component {
                 this.props.url.replace('/admin-dashboard');
             })
             .catch(e => {
-               console.log("this is the error message..") 
+                console.log("this is the error message..") 
+                this.setState({
+                    loginError: true
+                })
             })
     }
 
@@ -67,6 +71,7 @@ class AdminLogin extends Component {
                                 <Input className="login-input" type="password" placeholder="Password" onChange={this.handlePasswordChange}/>
                             </FormGroup>
                             <Button className="loginButton" onClick={this.handleSubmit}>Log In</Button>
+                            {this.state.loginError ? (<div className="login-error-message">Invalid username/password</div>) : (<div></div>)}
                         </Form>
                         <Link href="/">
                             <div className="login-page-route-home">Not an admin? <span className="click-here">Click here</span></div>
