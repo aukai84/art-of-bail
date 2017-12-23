@@ -21,6 +21,7 @@ class AdminLogin extends Component {
         this.handleUserChange = this.handleUserChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleEnterKey = this.handleEnterKey.bind(this);
     }
 
     componentDidMount(){
@@ -41,6 +42,16 @@ class AdminLogin extends Component {
         this.setState({
             password: e.target.value
         })
+    }
+
+    handleEnterKey(e){
+        //e.preventDefault();
+        let code = e.keyCode || e.charCode;
+        console.log(e.keyCode)
+        if(code === 13){
+            e.preventDefault();
+            this.handleSubmit(e);
+        }
     }
 
     handleSubmit(e){
@@ -65,10 +76,10 @@ class AdminLogin extends Component {
                         <h3 id="login-panel-header">Login as admin</h3>
                         <Form id="login-form">
                             <FormGroup>
-                                <Input className="login-input" type="text" placeholder="Username" onChange={this.handleUserChange}/>
+                                <Input className="login-input" type="text" placeholder="Username" onKeyDown={this.handleEnterKey} onChange={this.handleUserChange}/>
                             </FormGroup>
                             <FormGroup>
-                                <Input className="login-input" type="password" placeholder="Password" onChange={this.handlePasswordChange}/>
+                                <Input className="login-input" type="password" placeholder="Password" onKeyDown={this.handleEnterKey} onChange={this.handlePasswordChange}/>
                             </FormGroup>
                             <Button className="loginButton" onClick={this.handleSubmit}>Log In</Button>
                             {this.state.loginError ? (<div className="login-error-message">Invalid username/password</div>) : (<div></div>)}

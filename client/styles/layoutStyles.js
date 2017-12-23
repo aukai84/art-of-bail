@@ -6,13 +6,17 @@ export default css `
         font-family: 'Open Sans', sans-serif;
     }
 
-input {
-    border-radius: 0 !important;
-}
+    input {
+        border-radius: 0 !important;
+    }
 
-button {
-    border-radius: 0 !important;
-}
+    textarea {
+        border-radius: 0 !important;
+    }
+
+    button {
+        border-radius: 0 !important;
+    }
 
     #layout {
         min-height: 100%;
