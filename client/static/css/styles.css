@@ -40,12 +40,4 @@ label {
     color: red
 }
 
-@media (max-width: 576px) {
-    #quote-row {
-        padding: 25px;
-    }
-    #request-form-container {
-        padding: 25px;
-    }
-}
 

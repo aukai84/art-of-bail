@@ -23,7 +23,7 @@ export default css `
     }
 
     .navbar-toggler {
-        border: none;
+        border: none !important;
     }
 
     .navbar-toggler-icon {

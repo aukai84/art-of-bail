@@ -65,7 +65,7 @@ export default css`
 }
 
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 667px) {
     #login-page-container {
         padding: 50px;
     }
@@ -74,7 +74,7 @@ export default css`
     }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 425px) {
     #login-panel {
         height: 364px;
         width: 100%;

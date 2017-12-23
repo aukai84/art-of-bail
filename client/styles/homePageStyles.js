@@ -2,9 +2,9 @@ import css from 'styled-jsx/css'
 
 export default css`
 
-#black-background {
-    background-color: black;
-}
+    #black-background {
+        background-color: black;
+    }
 
     #splash-container {
         height: 532px;
@@ -51,5 +51,11 @@ export default css`
         background-color: #ffffff;
         padding: 65px;
     }
+
+@media screen and (max-width: 667px){
+    #quote-row {
+        padding: 35px;
+    }
+}
 
 `
