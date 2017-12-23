@@ -3,7 +3,7 @@ import css from 'styled-jsx/css'
 export default css `
 
     body {
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Open Sans', sans-serif !important;
     }
 
     input {
@@ -44,7 +44,7 @@ export default css `
     }
 
     #footer {
-        height: 125px;
+        height: 100px;
         color: #ffffff;
         background-color: #1a2930;
         text-align: center;

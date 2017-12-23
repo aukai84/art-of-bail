@@ -45,7 +45,7 @@ class QuoteForm extends Component {
                     <Label for="clientMessage">Message</Label>
                     <Input type="textarea" id="clientMessage" placeholder="Message..."/>
                 </FormGroup>
-                <Button className="quote-form-button" onClick={this.handleSubmit} block>CONTACT US</Button>
+                <Button className="quote-form-button" onClick={this.handleSubmit} block>Contact Us</Button>
                 <style jsx global>{quoteFormStyles}</style>
             </Form>
         )

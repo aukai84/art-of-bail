@@ -47,7 +47,6 @@ class AdminLogin extends Component {
     handleEnterKey(e){
         //e.preventDefault();
         let code = e.keyCode || e.charCode;
-        console.log(e.keyCode)
         if(code === 13){
             e.preventDefault();
             this.handleSubmit(e);

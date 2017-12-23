@@ -34,7 +34,7 @@ class Index extends Component {
                         <div id="splash-info">
                             <h1>Art of Bail</h1>
                             <p>Hawaii's Premiere Bail Bonds Company</p>
-                            <Button className="contact-us-button">Contact Us</Button>
+                            <Link href="/contact-us"><Button className="contact-us-button">Contact Us</Button></Link>
                         </div>
                     </div>
                 </div>
