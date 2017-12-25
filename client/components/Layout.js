@@ -4,6 +4,7 @@ import Head from 'next/head';
 import {Container, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem} from 'reactstrap';
 import layoutStyles from '../styles/layoutStyles.js';
 import AuthService from '../utils/AuthService.js';
+import AdminDropdown from './AdminDropdown.js';
 
 const API_URL = process.env.API_URL;
 const auth = new AuthService(API_URL); 
@@ -25,7 +26,7 @@ export default class Layout extends Component {
     }
 
     render(){
-
+        console.log('layout props', this.props)
         return (
             <div id="layout">
                 <Head>
@@ -35,34 +36,32 @@ export default class Layout extends Component {
                     <link rel="stylesheet" media="all" type="text/css" href="/static/css/bootstrap.min.css"/>
                     <link rel="stylesheet" href="/static/css/styles.css"/>  
                 </Head>
-                    <Navbar className="navbar-dark" expand="md">
-                      <NavbarBrand href="/">Art of Bail Hawaii</NavbarBrand>
-                      <NavbarToggler right onClick={this.toggleNav} className="mr-2"/>
-                      <Collapse isOpen={this.state.isOpen} padding-right="1rem" navbar>
-                        <Nav className="ml-auto navbar-dark" navbar>
-                          <NavItem> 
-                              <Link prefetch href="/"><a className="nav-link">Home</a></Link>
-                          </NavItem>
-                          <NavItem>
-                                  <Link prefetch href="/about-us"><a className="nav-link">About Us</a></Link>
-                          </NavItem>
-                          <NavItem>
-                                  <Link prefetch href="/find-your-case"><a className="nav-link">Find Your Case</a></Link>
-                          </NavItem>
-                          <NavItem>
-                              <Link prefetch href="/contact-us"><a className="nav-link">Contact Us</a></Link>
-                          </NavItem>
-                          <NavItem className="nav-button-login"> 
-                              {
-                                auth.loggedIn()?(<Link prefetch href="/admin-dashboard"><a className="nav-link">Admin</a></Link>) : (<Link prefetch href="/admin-login"><a className="nav-link">Login</a></Link>)
-                              }
-                          </NavItem>
-                        </Nav>
-                      </Collapse>
-                    </Navbar>
-                <div id="content-container">
-                    {this.props.children}
-                </div>
+                <Navbar className="navbar-dark" expand="md">
+                  <NavbarBrand href="/">Art of Bail Hawaii</NavbarBrand>
+                  <NavbarToggler right onClick={this.toggleNav} className="mr-2"/>
+                  <Collapse isOpen={this.state.isOpen} padding-right="1rem" navbar>
+                    <Nav className="ml-auto navbar-dark" navbar>
+                      <NavItem> 
+                          <Link prefetch href="/"><a className="nav-link">Home</a></Link>
+                      </NavItem>
+                      <NavItem>
+                              <Link prefetch href="/about-us"><a className="nav-link">About Us</a></Link>
+                      </NavItem>
+                      <NavItem>
+                              <Link prefetch href="/find-your-case"><a className="nav-link">Find Your Case</a></Link>
+                      </NavItem>
+                      <NavItem>
+                          <Link prefetch href="/contact-us"><a className="nav-link">Contact Us</a></Link>
+                      </NavItem>
+                      <NavItem> 
+                          {
+                          auth.loggedIn()?(<AdminDropdown {...this.props}/>) : (<Link prefetch href="/admin-login"><a className="nav-link">Login</a></Link>)
+                          }
+                      </NavItem>
+                    </Nav>
+                  </Collapse>
+                </Navbar>
+                  {this.props.children}
                 <div id="footer">
                     <p>Footer information</p>
                 </div>

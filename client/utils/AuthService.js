@@ -1,4 +1,5 @@
 import Cookies from 'js-cookie';
+import fetch from 'isomorphic-unfetch';
 
 export default class AuthService {
     constructor(domain){

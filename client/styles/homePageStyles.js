@@ -49,7 +49,7 @@ export default css`
 
     #quote-row {
         background-color: #ffffff;
-        padding: 65px;
+        padding: 50px;
     }
 
 @media screen and (max-width: 667px){

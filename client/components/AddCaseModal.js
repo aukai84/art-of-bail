@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, InputGroup, InputGroupAddon, Label, Form, FormGroup, FormText} from 'reactstrap';
-import ReactLoading from 'react-loading';
+import addCaseStyles from '../styles/addCaseStyles.js';
 
 class AddCaseModal extends Component {
     constructor(props){
@@ -63,7 +63,7 @@ class AddCaseModal extends Component {
         console.log('defName', this.state)
         return(
             <div>
-                <Button className="addCaseButton" size="sm" color="secondary" onClick={this.toggle}>Add Case</Button>
+                <Button className="addCaseButton" size="sm" onClick={this.toggle}>Add Case</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className="addCaseModal">
                     <ModalBody>
                         <Form>
@@ -105,6 +105,7 @@ class AddCaseModal extends Component {
                         <Button color="primary" size="md" onClick={this.handleAdd} block>CREATE CASE</Button>
                     </ModalFooter>
                 </Modal>
+                <style jsx global>{addCaseStyles}</style>
             </div>
         )
     }

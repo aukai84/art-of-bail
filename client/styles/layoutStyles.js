@@ -22,6 +22,11 @@ export default css `
         min-height: 100%;
     }
 
+    .navbar {
+        padding-left: 80px;
+        padding-right: 68px;
+    }
+
     .navbar-toggler {
         border: none !important;
     }
@@ -31,16 +36,8 @@ export default css `
         height: 25px;
     }
 
-    #content-container {
-        min-height: 100vh;
-    }
-
     .navbar-dark {
         background-color: #0a1612;
-    }
-
-    .nav-button-login {
-        border: 1px #f7ce3e solid;
     }
 
     #footer {
