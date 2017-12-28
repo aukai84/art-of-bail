@@ -40,6 +40,10 @@ export default css `
         background-color: #0a1612;
     }
 
+    #nav-items {
+        padding-left: 0;
+    }
+
     #footer {
         height: 100px;
         color: #ffffff;

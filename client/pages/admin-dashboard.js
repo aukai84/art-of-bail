@@ -16,7 +16,6 @@ class AdminDashboard extends Component {
             currentSelected: true,
             closedSelected: false
         }
-        this.logout = this.logout.bind(this);
         this.deleteCase = this.deleteCase.bind(this);
         this.addCase = this.addCase.bind(this);
         this.editCase = this.editCase.bind(this);
@@ -33,11 +32,6 @@ class AdminDashboard extends Component {
                     items: res
                 })
             })
-    }
-
-    logout(){
-        this.props.auth.logout();
-        this.props.url.replace('/admin-login')
     }
 
     addCase(newItem){
@@ -68,6 +62,7 @@ class AdminDashboard extends Component {
     }
 
     renderCurrent(){
+        //API call to db to fill state with current clients
         this.setState({
             currentSelected: true,
             closedSelected: false
@@ -75,6 +70,7 @@ class AdminDashboard extends Component {
     }
 
     renderClosed(){
+        //API call to db to fill state with closed clients
         this.setState({
             currentSelected: false,
             closedSelected: true
@@ -82,16 +78,18 @@ class AdminDashboard extends Component {
     }
 
     render(){
+        const currentActive = this.state.currentSelected ? "is-active" : "not-active";
+        const closedActive = this.state.closedSelected ? "is-active" : "not-active";
         return(
             <div className="dashboard-container">
                 <div className="table-container">
                     <div className="client-header">
                         <h1>Clients</h1>
-                        <AddCaseModal {...this.props} addItem={this.addItem}/>
+                        <AddCaseModal {...this.props} addCase={this.addCase}/>
                     </div>
                         <Breadcrumb tag="nav">
-                            <BreadcrumbItem className={this.state.currentSelected ? ("is-active") : ("not-active")} onClick={this.renderCurrent}>Current</BreadcrumbItem> 
-                            <BreadcrumbItem className={this.state.closedSelected ? ("is-active") : ("not-active")} onClick={this.renderClosed}>Closed</BreadcrumbItem>
+                            <BreadcrumbItem className={currentActive} onClick={this.renderCurrent}>Current</BreadcrumbItem> 
+                            <BreadcrumbItem className={closedActive} onClick={this.renderClosed}>Closed</BreadcrumbItem>
                         </Breadcrumb>
                             <table className="client-table">
                                 <th>Name</th>
@@ -100,7 +98,7 @@ class AdminDashboard extends Component {
                                 <th>Due Date</th>
                                 {this.state.currentSelected ? this.state.items.map(item => (
                                 <tr>
-                                    <Link href="/client"><td className="client-name">{item.defendantName}</td></Link>
+                                    <Link prefetch href={`/client?id=${item._id}`}><td className="client-name">{item.defendantName}</td></Link>
                                     <td>{item.caseNumber}</td>
                                     <td>${item.totalBailAmount}</td>
                                     <td>{item.BailPaymentDueDate}</td>

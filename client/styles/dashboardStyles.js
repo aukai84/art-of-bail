@@ -4,7 +4,6 @@ export default css`
     
     .dashboard-container {
         background-color: #1a2930;
-        height: 100vh;
         padding: 40px;
     }
 
@@ -68,6 +67,14 @@ export default css`
         background-color: #ffffff;
         color: #28434f;
         width: 100%;
+    }
+
+    .client-name {
+        color: red;
+    }
+
+    .client-name:hover {
+        cursor: pointer;
     }
 
 `

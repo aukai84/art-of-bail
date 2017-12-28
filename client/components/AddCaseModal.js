@@ -29,8 +29,6 @@ class AddCaseModal extends Component {
 
     handleInput(e, fieldName){
         e.preventDefault();
-        console.log('target value', e.target.value)
-        console.log('field name', fieldName)
         this.setState({
             [fieldName]: e.target.value
         })
@@ -63,7 +61,7 @@ class AddCaseModal extends Component {
         console.log('defName', this.state)
         return(
             <div>
-                <Button className="addCaseButton" size="sm" onClick={this.toggle}>Add Case</Button>
+                <Button className="add-case-button" size="sm" onClick={this.toggle}>Add Case</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className="addCaseModal">
                     <ModalBody>
                         <Form>

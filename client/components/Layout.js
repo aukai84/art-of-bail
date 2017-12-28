@@ -40,7 +40,7 @@ export default class Layout extends Component {
                   <NavbarBrand href="/">Art of Bail Hawaii</NavbarBrand>
                   <NavbarToggler right onClick={this.toggleNav} className="mr-2"/>
                   <Collapse isOpen={this.state.isOpen} padding-right="1rem" navbar>
-                    <Nav className="ml-auto navbar-dark" navbar>
+                    <Nav id="nav-items" className="ml-auto navbar-dark" navbar>
                       <NavItem> 
                           <Link prefetch href="/"><a className="nav-link">Home</a></Link>
                       </NavItem>
@@ -53,7 +53,7 @@ export default class Layout extends Component {
                       <NavItem>
                           <Link prefetch href="/contact-us"><a className="nav-link">Contact Us</a></Link>
                       </NavItem>
-                      <NavItem> 
+                      <NavItem className="admin-login-button"> 
                           {
                           auth.loggedIn()?(<AdminDropdown {...this.props}/>) : (<Link prefetch href="/admin-login"><a className="nav-link">Login</a></Link>)
                           }

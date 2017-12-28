@@ -2,8 +2,7 @@ import Cookies from 'js-cookie';
 import fetch from 'isomorphic-unfetch';
 
 export default class AuthService {
-    constructor(domain){
-        this.domain = domain || process.env.API_URL
+    constructor(domain){ this.domain = domain || process.env.API_URL
         this.fetch = this.fetch.bind(this)
         this.login = this.login.bind(this)
         this.getProfile = this.getProfile.bind(this)

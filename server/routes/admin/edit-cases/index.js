@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 const Bail = require('../../../models/case');
 
 //get list of all cases
@@ -9,6 +8,20 @@ router.get('/', function(req, res, next) {
         res.json(bails);
     });
 });
+
+//get specific case by _id **used in admin's dashboard**
+router.get('/:id', function(req, res, next) {
+    console.log('client id', req.params.id)
+    let id = req.params.id;
+    Bail.findById(id, function(err, bail){
+        if(err){
+            res.send(err);
+        } else {
+            res.json(bail)
+        }
+    })
+
+})
 
 /*post new case
 //pass case as object on req.body all fields optional, but we should require certain fields to submit the form.

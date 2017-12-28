@@ -36,10 +36,8 @@ export default class AdminDropdown extends Component {
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                 <DropdownToggle caret>Admin</DropdownToggle>
                     <DropdownMenu>
-                        <DropdownItem>
-                            <Link href="/admin-dashboard">Dashboard</Link>
-                        </DropdownItem>
-                        <DropdownItem onClick={this.logout}>Sign Out</DropdownItem>
+                        <Link href="/admin-dashboard"><DropdownItem>Dashboard</DropdownItem></Link>
+                        <DropdownItem className="sign-out-dropdown" onClick={this.logout}>Sign Out</DropdownItem>
                     </DropdownMenu>
                     <style jsx global>{dropdownStyles}</style>
             </Dropdown>

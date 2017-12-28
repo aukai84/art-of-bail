@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Row, Col, Card, CardTitle, CardSubtitle,  CardImg, CardText, CardBody, Form, FormGroup, FormText, Button, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+import editCaseStyles from '../styles/editCaseStyles.js';
 
 class EditCaseModal extends Component {
     constructor(props){
@@ -10,6 +11,7 @@ class EditCaseModal extends Component {
         this.toggle = this.toggle.bind(this);
         this.deleteCase = this.deleteCase.bind(this);
         this.editCase = this.editCase.bind(this);
+        this.handleInput = this.handleInput.bind(this);
     }
 
     toggle(){
@@ -31,46 +33,45 @@ class EditCaseModal extends Component {
             method: 'PUT',
             body: JSON.stringify({
                 updateCase: {
-                    totalBailOutstanding: this.totalBailOutstanding.value,
-                    defendantPhone: this.defendantPhone.value
+                    totalBailAmount: this.state.totalBailAmount,
+                    totalBailOutstanding: this.state.totalBailOutstanding,
+                    defendantPhone: this.state.defendantPhone
                 }
             }) 
         })
             .then(res => {
                 console.log('edited item', res)
-                this.props.editCase(res);
                 this.toggle();
             })
+    }
+
+    handleInput(e, fieldName){
+        e.preventDefault();
+        this.setState({
+            [fieldName]: e.target.value
+        })
     }
 
     render(){
         return(
             <div>
-                <Card>
-                    <CardTitle>{this.props.item.defendantName}</CardTitle>
-                    <CardSubtitle>Case no. {this.props.item.caseNumber}</CardSubtitle>
-                    <CardText>Bail Amount: ${this.props.item.totalBailAmount}</CardText>
-                    <CardText>Bail Outstanding: ${this.props.item.totalBailOutstanding}</CardText>
-                    <CardText>Bail Due Date: {this.props.item.BailPaymentDueDate}</CardText>
-                    <CardText>Defendant Phone: {this.props.item.defendantPhone}</CardText>
-                    <CardText>Cosigner : {this.props.item.cosignerName}</CardText>
-                    <CardText>Cosigner Phone: {this.props.item.cosignerPhone}</CardText>
-                    <CardText><a href={this.props.item.stateCaseLink}>Ekokua</a></CardText>
-                        <Button color="primary" onClick={this.toggle}>Edit Case</Button>
-                        <Button color="danger" onClick={this.deleteCase}>Delete Case</Button>
-                </Card>
+                <Button className="edit-case-button" size="sm" color="primary" onClick={this.toggle}>Edit Case</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader>{this.props.item.defendantName} {this.props.item.caseNumber}</ModalHeader>
                     <ModalBody>
                         <div>
                             <Form>
                                 <FormGroup>
+                                    <Label for="total-bail-input">Bail Amount</Label>
+                                    <Input id="total-bail-input" type="number" defaultValue={this.props.item.totalBailAmount} onChange={e=>{this.handleInput(e,"totalBailAmount")}}/>
+                                </FormGroup>
+                                <FormGroup>
                                     <Label for="bail-outstanding-input">Bail Outstanding</Label>
-                                    <Input id="bai-outstanding-input" type="number" defaultValue={this.props.item.totalBailOutstanding} getRef={input=>(this.totalBailOutstanding=input)} />
+                                    <Input id="bail-outstanding-input" type="number" defaultValue={this.props.item.totalBailOutstanding} onChane={e=>{this.handleInput(e,"totalBailOutstanding")}}/>
                                 </FormGroup>
                                 <FormGroup>
                                     <Label for="defendant-phone-input">Defendant Phone</Label>
-                                    <Input id="defendant-phone-input" defaultValue={this.props.item.defendantPhone} type="tel" getRef={input=>(this.defendantPhone=input)} />
+                                    <Input id="defendant-phone-input" defaultValue={this.props.item.defendantPhone} type="tel" onChange={e=>{this.handleInput(e, "defendantPhone")}}/>
                                 </FormGroup>
                                 <ModalFooter>
                                     <Button color="primary" onClick={this.editCase}>Submit</Button>
@@ -80,6 +81,7 @@ class EditCaseModal extends Component {
                         </div>
                     </ModalBody>
                 </Modal>
+                <style jsx global>{editCaseStyles}</style>
             </div>
         )
     }
