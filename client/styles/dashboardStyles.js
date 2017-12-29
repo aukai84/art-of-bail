@@ -77,4 +77,13 @@ export default css`
         cursor: pointer;
     }
 
+    .hidden-x {
+        opacity: 0;
+    }
+
+    .hidden-x:hover {
+        opacity: 1;
+        background-color: white !important;
+    }
+
 `

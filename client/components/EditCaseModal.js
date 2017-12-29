@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Row, Col, Card, CardTitle, CardSubtitle,  CardImg, CardText, CardBody, Form, FormGroup, FormText, Button, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+import {Form, FormGroup, FormText, Button, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import editCaseStyles from '../styles/editCaseStyles.js';
+import DeleteCaseModal from './DeleteCaseModal.js';
 
 class EditCaseModal extends Component {
     constructor(props){
@@ -76,6 +77,7 @@ class EditCaseModal extends Component {
                                 <ModalFooter>
                                     <Button color="primary" onClick={this.editCase}>Submit</Button>
                                     <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                                    <DeleteCaseModal {...this.props} item={this.props.item} isModal/>
                                 </ModalFooter>
                             </Form>
                         </div>

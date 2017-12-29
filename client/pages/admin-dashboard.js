@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Link from 'next/link';
 import Layout from '../components/Layout.js';
 import AddCaseModal from '../components/AddCaseModal.js';
+import DeleteCaseModal from '../components/DeleteCaseModal.js';
 import fetch from 'isomorphic-unfetch';
 import {Breadcrumb, BreadcrumbItem, Form, FormGroup, FormText, Button, Label, Input, Col, Row, Container} from 'reactstrap';
 import withAuth from '../utils/withAuth.js';
@@ -96,12 +97,14 @@ class AdminDashboard extends Component {
                                 <th>Case Number</th>
                                 <th>Bail Amount</th>
                                 <th>Due Date</th>
+                                <th></th>
                                 {this.state.currentSelected ? this.state.items.map(item => (
                                 <tr>
                                     <Link prefetch href={`/client?id=${item._id}`}><td className="client-name">{item.defendantName}</td></Link>
                                     <td>{item.caseNumber}</td>
                                     <td>${item.totalBailAmount}</td>
                                     <td>{item.BailPaymentDueDate}</td>
+                                    <td><DeleteCaseModal {...this.props} item={item} deleteCase={this.deleteCase}/></td>
                                 </tr>
                                 )) : (
                                 <tr>

@@ -27,7 +27,6 @@ class ClientPage extends Component {
     }
 
     render(){
-        console.log(this.state, 'item')
         return(
             <div className="dashboard-container">
                 <div className="table-container">
@@ -35,8 +34,11 @@ class ClientPage extends Component {
                         <h1>{this.state.item.defendantName}</h1>
                         <EditCaseModal {...this.props} item={this.state.item}/>
                     </div>
-                    <h4>{this.state.item.caseNumber}</h4>
-                    <a href={this.state.item.stateCaseLink}>hawaii.gov</a>
+                    <div className="client-header-sub">
+                        <h4>{this.state.item.caseNumber}</h4>
+                        <a href={this.state.item.stateCaseLink}>hawaii.gov</a>
+                    </div>
+                    <h5>Contact Info</h5>
                     <div className="client-details-container">
                         <div className="client-details-list">
                             <ul>
@@ -50,6 +52,7 @@ class ClientPage extends Component {
                                 <li>{this.state.item.cosignerPhone}</li>
                             </ul>
                         </div>
+                        <h5>Bail Info</h5>
                         <div className="client-details-list">
                             <ul>
                                 <li>Bail Amount</li>
@@ -62,20 +65,24 @@ class ClientPage extends Component {
                                 <li>{this.state.item.BailPaymentDueDate}</li>
                             </ul>
                         </div>
-                            {this.state.item.courtDatesList ? this.state.item.courtDatesList.map(item => (
-                            <div className="client-details-list">
-                            <ul>
-                                <li>Court Date</li>
-                            </ul>
-                            <ul>
-                                <li>{item.desc}</li>
-                            </ul>
+                        <h5>Court Dates</h5>
+                        <div className="court-dates-container">
+                            {this.state.item.courtDatesList ? this.state.item.courtDatesList.map(item => ( <div className="court-dates-list">
+                                <ul>
+                                    <li>Court Date</li>
+                                </ul>
+                                <ul>
+                                    <li>{item.desc}</li>
+                                    <li>{item.date}</li>
+                                    <li>{item.time}</li>
+                                </ul>
+                            </div>
+                            )) : (<p>Court dates pending</p>)}
                         </div>
-                        )) : (<p>Court dates pending</p>)}
                     </div>
                 </div>
                 <style jsx global>{dashboardStyles}</style>
-                <style jsx global>{clientPageStyles}</style>
+                <style jsx>{clientPageStyles}</style>
             </div>
         )
     }
