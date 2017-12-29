@@ -41,7 +41,7 @@ class EditCaseModal extends Component {
             }) 
         })
             .then(res => {
-                console.log('edited item', res)
+                this.props.updateItem(res);
                 this.toggle();
             })
     }
@@ -54,6 +54,7 @@ class EditCaseModal extends Component {
     }
 
     render(){
+        console.log(this.state)
         return(
             <div>
                 <Button className="edit-case-button" size="sm" color="primary" onClick={this.toggle}>Edit Case</Button>
@@ -68,7 +69,7 @@ class EditCaseModal extends Component {
                                 </FormGroup>
                                 <FormGroup>
                                     <Label for="bail-outstanding-input">Bail Outstanding</Label>
-                                    <Input id="bail-outstanding-input" type="number" defaultValue={this.props.item.totalBailOutstanding} onChane={e=>{this.handleInput(e,"totalBailOutstanding")}}/>
+                                    <Input id="bail-outstanding-input" type="number" defaultValue={this.props.item.totalBailOutstanding} onChange={e=>{this.handleInput(e,"totalBailOutstanding")}}/>
                                 </FormGroup>
                                 <FormGroup>
                                     <Label for="defendant-phone-input">Defendant Phone</Label>

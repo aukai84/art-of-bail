@@ -70,7 +70,8 @@ export default css`
     }
 
     .client-name {
-        color: red;
+        color: #335260;
+        font-weight: bold;
     }
 
     .client-name:hover {
@@ -78,7 +79,7 @@ export default css`
     }
 
     .last-table-column {
-        width: 15%;    
+        width: 13%;    
     }
 
     .hidden-x {
@@ -86,8 +87,9 @@ export default css`
     }
 
     .hidden-x:hover {
-        opacity: 1;
-        background-color: white !important;
+        opacity: .75;
+        color: #ff2b2b;
+        cursor: pointer;
     }
 
 `

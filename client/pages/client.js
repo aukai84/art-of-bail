@@ -13,6 +13,7 @@ class ClientPage extends Component {
         this.state = {
             item: {}
         }
+        this.updateItem = this.updateItem.bind(this);
     }
 
     componentDidMount(){
@@ -26,13 +27,19 @@ class ClientPage extends Component {
             })
     }
 
+    updateItem(newItem){
+        this.setState({
+            item: newItem
+        })
+    }
+
     render(){
         return(
             <div className="dashboard-container">
                 <div className="table-container">
                     <div className="client-header">
                         <h1>{this.state.item.defendantName}</h1>
-                        <EditCaseModal {...this.props} item={this.state.item}/>
+                        <EditCaseModal {...this.props} item={this.state.item} updateItem={this.updateItem}/>
                     </div>
                     <div className="client-header-sub">
                         <h4>{this.state.item.caseNumber}</h4>
