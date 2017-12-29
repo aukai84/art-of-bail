@@ -3,7 +3,8 @@ import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 import {Container, Row, Col, Form, FormGroup, Label, Input, InputGroup, InputGroupAddon, FormText, Button} from 'reactstrap';
 import Layout from '../components/Layout.js';
-import CarouselComponent from '../components/Carousel.js';
+import QuoteForm from '../components/QuoteForm.js';
+import homePageStyles from '../styles/homePageStyles.js';
 
 let API_URL = process.env.API_URI;
 console.log('this is the api...', API_URL)
@@ -11,6 +12,7 @@ console.log('this is the api...', API_URL)
 class Index extends Component {
     constructor(props){
         super(props);
+        this.state = {}
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -18,61 +20,51 @@ class Index extends Component {
         console.log('requesting bail from arthur...')
     }
 
+    imageLoaded = () => {
+        this.setState({
+            imagePath: "/static/images/suit-min-min.jpg"
+        })
+    }
+
     render(){
         return (
             <Layout>
                 <div id="splash-container">
-                    <div id="splash-info">
-                        <h3>Welcome to Art of Bail Hawaii</h3>
+                    <div id="splash-info-container">
+                        <div id="splash-info">
+                            <h1>Art of Bail</h1>
+                            <p>Hawaii's Premiere Bail Bonds Company</p>
+                            <Link href="/contact-us"><Button className="contact-us-button">Contact Us</Button></Link>
+                        </div>
                     </div>
                 </div>
-                <Col>
-                </Col>
-                <Row>
-                    <Col xs="12" sm="12" md="12" lg="12" xl="12">
-                        <div id="home-info-container">
-                            This will be the information about arthur, getting a quote, mission statement?, etc
-                        </div>
-                    </Col>
-                    <Col xs="12" sm="12" md="4" lg="4" xl="4">
-                        <Form id="request-form-container">
-                            <FormGroup>
-                                <Label for="clientName">Your Name<span className="required">*</span></Label>
-                                <InputGroup>
-                                    <InputGroupAddon><i className="fa fa-user-circle"></i></InputGroupAddon>
-                                    <Input type="text" id="clientName" placeholder="Enter Your Name"/>
-                                </InputGroup>
-                            </FormGroup>
-                            <FormGroup>
-                                <Label for="clientEmail">Your Email<span className="required">*</span></Label>
-                                <InputGroup>
-                                    <InputGroupAddon><i className="fa fa-envelope"></i></InputGroupAddon>
-                                    <Input type="email" id="clientEmail" placeholder="Enter Your Email"/>
-                                </InputGroup>
-                            </FormGroup>
-                            <FormGroup>
-                                <Label for="clientPhone">Phone Number<span className="required">*</span></Label>
-                                <InputGroup>
-                                    <InputGroupAddon><i className="fa fa-phone-square fa-lg"></i></InputGroupAddon>
-                                    <Input type="tel" id="clientPhone" placeholder="(xxx)xxx-xxxx"/>
-                                </InputGroup>
-                            </FormGroup>
-                            <FormGroup>
-                                <Label for="defendantName">Defendant's Name<span className="required">*</span></Label>
-                                <InputGroup>
-                                    <InputGroupAddon><i className="fa fa-user-circle"></i></InputGroupAddon>
-                                    <Input type="text" id="defendantName" placeholder="Enter Defendant's Name"/>
-                                </InputGroup>
-                            </FormGroup>
-                            <FormGroup>
-                                <Label for="clientMessage">Message</Label>
-                                <Input type="textarea" id="clientMessage" placeholder="Message..."/>
-                            </FormGroup>
-                            <Button color="primary" onClick={this.handleSubmit} block>CONTACT US</Button>
-                        </Form>
-                    </Col>
+                <div>
+                    <Row>
+                        <Col xs="12" sm="12" md="12" lg="12" xl="12">
+                            <div id="home-info-container">
+                                This will be the information about arthur, getting a quote, mission statement?, etc
+                            </div>
+                        </Col>
+                        <Col xs="12" sm="12" md="4" lg="4" xl="4">
+                            <div className="home-column-containers">First Column info</div>
+                        </Col>
+                        <Col xs="12" sm="12" md="4" lg="4" xl="4">
+                            <div className="home-column-containers">Second Column info</div>
+                        </Col>
+                        <Col xs="12" sm="12" md="4" lg="4" xl="4">
+                            <div className="home-column-containers">Third Column info</div>
+                        </Col>
                     </Row>
-
+                    <Row id="quote-row">
+                        <Col xs="12" sm="12" md="6" lg="5" xl="4">
+                            <QuoteForm />
+                        </Col>
+                        <Col xs="12" sm="12" md="6" lg="7" xl="8">
+                            <h2>Info Statement about arthurs website</h2>
+                        </Col>
+                    </Row>
+                </div>
+                <style jsx global>{homePageStyles}</style>
             </Layout>
         )
     }

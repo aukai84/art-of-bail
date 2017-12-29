@@ -3,7 +3,6 @@ import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
 import Layout from '../components/Layout.js';
 import {Form, FormGroup, FormText, Label, Input, Container, Row, Col, Button} from 'reactstrap';
-import ReactLoading from 'react-loading';
 import AuthService from '../utils/AuthService.js';
 const auth = new AuthService(process.env.API_URL);
 

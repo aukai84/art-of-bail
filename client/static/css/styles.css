@@ -1,63 +1,18 @@
-p {
-    margin-bottom: .5rem;
-    font-size: .75rem;
+/*Professional and Modern Color Scheme {
+ *  Screen: #c6c1c0,
+ *  Steel: #0a1612,
+ *  Denim: #1a2930,
+ *  Marigold: #f7ce3e
+ * }
+ */
+
+
+label {
+    font-size: 13px;
 }
 
-#splash-container {
-    height: 444px;
-    width: 100%;
-    padding-top: 140px;
-    padding-bottom: 80px;
-    background-image: url('/static/images/pastel.jpg');
-    background-size: cover;
-}
 
-#splash-info {
-    margin: auto;
-    text-align: center;
-}
-
-#home-info-container {
-    height: 300px;
-    width: 100%;
-    text-align: center;
-    padding-top: 80px;
-}
-
-.navbar {
-    background-color: rgba(22, 22, 55, .5);
-    height: 60px;
-}
-
-.navbar-toggler {
-    border: none;
-}
-
-.navbar-toggler-icon {
-    width: 25px;
-    height: 25px;
-}
-
-.nav-item {
-    color: red;
-}
-
-.nav-link {
-    padding-right: 1rem;
-    padding-left: 1rem; 
-}
-
-#main-header {
-    height: 10%;
-    text-align: center;
-}
-
-.header {
-    height: 2rem;
-    text-align: center;
-}
-
-.dropdown-menu {
+/*.dropdown-menu {
     border: none;
     font-family: sans-serif;
     color: green;
@@ -74,21 +29,7 @@ p {
 
 .dropdown-item {
     text-align: center;
-}
-
-#request-form-container {
-    padding: 5%;
-    background-color: grey;
-}
-
-#loginForm {
-    width: 75%;
-    margin: auto;
-}
-
-.loginButton {
-    width: 100%;
-}
+}*/
 
 .edit-modal-container {
     padding-top: 15px;
@@ -98,3 +39,5 @@ p {
 .error-message {
     color: red
 }
+
+

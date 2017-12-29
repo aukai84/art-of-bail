@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AuthService from './AuthService.js';
-import ReactLoading from 'react-loading';
+import Layout from '../components/Layout.js';
+
 const API_URL = process.env.API_URL;
 
 export default function withAuth(AuthComponent) {
@@ -25,11 +26,17 @@ export default function withAuth(AuthComponent) {
         
         render(){
             return (
-                <div>
-                    {this.state.isLoading? (<ReactLoading type="cylon" color="cornflowerblue" height="667" width="667" delay={2000}/>) : (
-                    <AuthComponent {...this.props} auth={Auth} />
-                    )}
-                </div>
+                <Layout>
+                        {this.state.isLoading? (<div className="load-screen">loading...</div>) : (
+                        <AuthComponent {...this.props} auth={Auth} />
+                        )}
+                    <style jsx>{`
+                        .load-screen {
+                        background-color: #1a2930;
+                        height: 100vh;
+                        }     
+                    `}</style>
+                </Layout>
             )
         }
     }
