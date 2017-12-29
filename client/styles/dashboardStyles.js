@@ -77,6 +77,10 @@ export default css`
         cursor: pointer;
     }
 
+    .last-table-column {
+        width: 15%;    
+    }
+
     .hidden-x {
         opacity: 0;
     }

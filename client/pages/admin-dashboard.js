@@ -96,15 +96,15 @@ class AdminDashboard extends Component {
                                 <th>Name</th>
                                 <th>Case Number</th>
                                 <th>Bail Amount</th>
-                                <th>Due Date</th>
+                                <th className="last-table-column">Due Date</th>
                                 <th></th>
                                 {this.state.currentSelected ? this.state.items.map(item => (
                                 <tr>
                                     <Link prefetch href={`/client?id=${item._id}`}><td className="client-name">{item.defendantName}</td></Link>
                                     <td>{item.caseNumber}</td>
                                     <td>${item.totalBailAmount}</td>
-                                    <td>{item.BailPaymentDueDate}</td>
-                                    <td><DeleteCaseModal {...this.props} item={item} deleteCase={this.deleteCase}/></td>
+                                    <td className="last-table-column">{item.BailPaymentDueDate}</td>
+                                    <td className="hidden-x"><DeleteCaseModal {...this.props} item={item} deleteCase={this.deleteCase}/></td>
                                 </tr>
                                 )) : (
                                 <tr>
