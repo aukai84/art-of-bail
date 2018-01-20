@@ -54,4 +54,11 @@ export default css `
         width: 100%;
     }
 
+@media screen and (max-width: 425px) {
+    .navbar {
+        padding-left: 35px;
+        padding-right: 23px;
+    }
+}
+
 `
