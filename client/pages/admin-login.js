@@ -5,9 +5,8 @@ import Layout from '../components/Layout.js';
 import loginStyles from '../styles/loginStyles';
 import {Container, Row, Col, Form, FormGroup, FormText, Label, Input, Button} from 'reactstrap';
 import AuthService from '../utils/AuthService.js';
-console.log(loginStyles)
+import {API_URL} from'../config';
 
-const API_URL = process.env.API_URL;
 const auth = new AuthService(API_URL);
 
 class AdminLogin extends Component {

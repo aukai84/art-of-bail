@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import AuthService from './AuthService.js';
 import Layout from '../components/Layout.js';
-
-const API_URL = process.env.API_URL;
+import {API_URL} from '../config';
 
 export default function withAuth(AuthComponent) {
     const Auth = new AuthService(API_URL);
