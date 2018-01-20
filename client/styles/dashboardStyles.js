@@ -96,7 +96,7 @@ td {
 @media screen and (max-width: 425px) {
 
     .dashboard-container {
-        padding: 20px;
+        padding: 15px;
     }
         
     .table-container {
@@ -106,6 +106,20 @@ td {
     td:nth-child(3), th:nth-child(3) {
         display: none;
     }
+
+    .last-table-column {
+        display: none;
+    }
+
+    td:nth-child(2) {
+        text-align: center;
+    }
+
+    .hidden-x {
+        opacity: 1;
+        color: #bbbbbb;
+    }
+
 }
 
 
