@@ -103,6 +103,7 @@ td {
 
     .dashboard-container {
         padding: 15px;
+        font-size: .8rem;
     }
 
     .client-header {

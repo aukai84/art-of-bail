@@ -26,6 +26,7 @@ export default css`
 @media screen and (max-width: 425px) {
     .find-case-container {
         padding: 20px;
+        font-size:.8rem;
     }
 
     .search-container {
