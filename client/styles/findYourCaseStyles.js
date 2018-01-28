@@ -23,14 +23,25 @@ export default css`
         text-align: center;
     }
 
+    .error-message {
+        position: absolute;
+        margin-top: 10px;
+        font-size: .9rem;
+    }
+
 @media screen and (max-width: 425px) {
     .find-case-container {
         padding: 20px;
         font-size:.8rem;
     }
 
-    .search-container {
-        padding: 20px;
+        .search-container {
+            padding: 20px 20px 25px 20px;
     }
+
+        .error-message {
+            margin-top: 5px;
+            font-size: .8rem;
+        }
 }
 `
