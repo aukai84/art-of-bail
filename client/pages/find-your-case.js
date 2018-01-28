@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
 import Layout from '../components/Layout.js';
+import dashboardStyles from '../styles/dashboardStyles.js';
+import clientPageStyles from '../styles/clientPageStyles.js';
+import findYourCaseStyles from '../styles/findYourCaseStyles.js';
 import {Form, FormGroup, FormText, Label, Input, Container, Row, Col, Button} from 'reactstrap';
 import AuthService from '../utils/AuthService.js';
 const auth = new AuthService(process.env.API_URL);
@@ -27,8 +30,7 @@ class FindYourCase extends Component {
             caseNumber: e.target.value
         })
     }
-
-    handleEnterKey(e){
+handleEnterKey(e){
         let code = e.keyCode || e.charCode;
         if(code === 13){
             e.preventDefault();
@@ -71,42 +73,63 @@ class FindYourCase extends Component {
     render(){
         return(
             <Layout>
-                <Row>
-                    <Col xs="8" sm="8" md="8" lg="8" xl="8">
-                        <Form>
-                            <FormGroup>
-                                <Label for="findCaseInput">Find Your Case</Label>
-                                <Input type="text" id="findCaseInput" placeholder="Enter Your Case Number Here" onKeyDown={this.handleEnterKey} onChange={this.handleInput}/>
-                            </FormGroup>
-                        </Form>
+                <div className="find-case-container">
+                    <div className="search-container">
+                        <Input type="text" id="findCaseInput" placeholder="Enter Your Case Number Here" onKeyDown={this.handleEnterKey} onChange={this.handleInput}/>
                         {this.state.searchEmpty ? (<p className="error-message">Cannot find your case</p>) : this.state.searchError ? (<p className="error-message">Error finding case</p>) : (<div></div>)}
-                        <div id="case-window-container">
+                    </div>
+                        <div className="case-window-container">
                             {
                                 this.state.case ? (
-                                    <div>
-                                        <div id="defendant-info-container">
-                                            <h2>Defendant</h2>
-                                            <p>{this.state.case.defendantName}</p>
-                                            <p>Case No. {this.state.case.caseNumber}</p>
-                                            <p>{this.state.case.defendantPhone}</p>
-                                            <p>Total Bail Amount ${this.state.case.totalBailAmount}</p>
-                                            <p>Bail Outstanding ${this.state.case.totalBailOutstanding}</p>
-                                            <p>Bail Due Date {this.state.case.BailPaymentDueDate}</p>
+                                    <div className="table-container">
+                                        <div className="client-header">
+                                            <h1>{this.state.case.defendantName}</h1>
                                         </div>
-                                        <div id="cosigner-info-container">
-                                            <h2>Cosigner</h2>
-                                            <p>{this.state.case.cosignerName}</p>
-                                            <p>{this.state.case.cosignerPhone}</p>
+                                        <div className="client-header-sub">
+                                            <h4>{this.state.case.caseNumber}</h4>
+                                            <a href={this.state.case.stateCaseLink}>hawaii.gov</a>
                                         </div>
-                                        <div id="court-dates-container">
-                                            <h2>Court Dates</h2>
-                                            {this.state.case.courtDatesList.map(item => (
-                                            <div class="court-dates-list">
-                                                <p>Date {item.date}</p>
-                                                <p>Time {item.time}</p>
-                                                <p>Description {item.desc}</p>
+                                        <h5>Contact Info</h5>
+                                        <div className="client-details-container">
+                                            <div className="client-details-list">
+                                                <ul>
+                                                    <li>Phone</li>
+                                                    <li>Cosigner</li>
+                                                    <li>Cosigner Phone</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>{this.state.case.defendantPhone}</li>
+                                                    <li>{this.state.case.cosignerName}</li>
+                                                    <li>{this.state.case.cosignerPhone}</li>
+                                                </ul>
                                             </div>
-                                            ))}
+                                            <h5>Bail Info</h5>
+                                            <div className="client-details-list">
+                                                <ul>
+                                                    <li>Bail Amount</li>
+                                                    <li>Bail Outstanding</li>
+                                                    <li>Bail Due</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>${this.state.case.totalBailAmount}</li>
+                                                    <li>${this.state.case.totalBailOutstanding}</li>
+                                                    <li>{this.state.case.BailPaymentDueDate}</li>
+                                                </ul>
+                                            </div>
+                                            <h5>Court Dates</h5>
+                                            <div className="court-dates-container">
+                                                {this.state.case.courtDatesList ? this.state.case.courtDatesList.map(item => ( <div className="court-dates-list">
+                                                    <ul>
+                                                        <li>Court Date</li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li>{item.desc}</li>
+                                                        <li>{item.date}</li>
+                                                        <li>{item.time}</li>
+                                                    </ul>
+                                                </div>
+                                            )) : (<p>Court dates pending</p>)}
+                                            </div>
                                         </div>
                                     </div>
                                 ) : this.state.isLoading ? (
@@ -118,8 +141,10 @@ class FindYourCase extends Component {
                                         )
                             } 
                         </div>
-                    </Col>
-                </Row>
+                    </div>
+                    <style jsx global>{dashboardStyles}</style>
+                    <style jsx>{clientPageStyles}</style>
+                    <style jsx>{findYourCaseStyles}</style>
             </Layout>
         )
     }
