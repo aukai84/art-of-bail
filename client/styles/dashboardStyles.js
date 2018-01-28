@@ -1,8 +1,14 @@
 import css from 'styled-jsx/css'
 
 export default css`
-    
+
+.dashboard-app {
+    background-color: #1a2930;
+}
+
 .dashboard-container {
+    max-width: 1280px;
+    margin: auto;
     background-color: #1a2930;
     padding: 40px;
     min-height: 100vh;
@@ -98,6 +104,10 @@ td {
     .dashboard-container {
         padding: 15px;
     }
+
+    .client-header {
+        flex-direction: column-reverse;         
+    }
         
     .table-container {
         padding: 20px;
@@ -111,13 +121,14 @@ td {
         display: none;
     }
 
-    td:nth-child(2) {
-        text-align: center;
+    td:nth-child(2), th:nth-child(2) {
+        padding-left: 40px;
     }
 
     .hidden-x {
         opacity: 1;
         color: #bbbbbb;
+        width: 10%;
     }
 
 }

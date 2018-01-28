@@ -9,10 +9,9 @@ export default css`
 
 @media screen and (max-width: 425px) {
     .add-case-button {
-        height: 45px;
         margin-bottom: 20px;
         width: 100%;
-        height: 100%;
+        height: 55px;
     }
 }
 `

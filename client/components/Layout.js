@@ -28,6 +28,9 @@ export default class Layout extends Component {
     render(){
         console.log('layout props', this.props)
         return (
+            <div className="app">
+                <div className="body-nav">
+                </div>
             <div id="layout">
                 <Head>
                     <title>Art's BBC</title>
@@ -60,13 +63,14 @@ export default class Layout extends Component {
                       </NavItem>
                     </Nav>
                   </Collapse>
-                </Navbar>
+              </Navbar>
                   {this.props.children}
-                <div id="footer">
-                    <p>Footer information</p>
-                </div>
+              <div id="footer">
+                <p>Footer information</p>
+              </div>
                 <style jsx global>{layoutStyles}</style>
-          </div>
+            </div>
+        </div>
         )
     }
 }

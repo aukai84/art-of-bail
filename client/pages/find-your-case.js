@@ -12,19 +12,34 @@ class FindYourCase extends Component {
         this.state = {
             isLoading: false,
             case: null,
+            caseNumber: '',
             errorMessage: null,
             searchEmpty: false 
         }
-        this.findCase= this.findCase.bind(this);
+        this.handleInput = this.handleInput.bind(this);
+        this.findCase = this.findCase.bind(this);
     }
 
-    findCase(e){
+    handleInput(e){
         e.preventDefault();
+        this.setState({
+            caseNumber: e.target.value
+        })
+    }
+
+    handleEnterKey(e){
+        let code = e.keyCode || e.charCode;
+        if(code === 13){
+            e.preventDefault();
+            this.findCase();
+        }
+    }
+
+    findCase(){
         this.setState({
             isLoading: true
         })
-        console.log('submitting case number...')
-        let caseNumber = this.caseNumber.value
+        let caseNumber = this.state.caseNumber
         auth.fetch(`${auth.domain}/client-portal/${caseNumber}`,{method: 'GET'})
             .then(res => {
                 if(res.case){
@@ -55,17 +70,13 @@ class FindYourCase extends Component {
     render(){
         return(
             <Layout>
-                <div>
-                    This is where you find your case
-                </div>
                 <Row>
                     <Col xs="8" sm="8" md="8" lg="8" xl="8">
                         <Form>
                             <FormGroup>
                                 <Label for="findCaseInput">Find Your Case</Label>
-                                <Input type="text" id="findCaseInput" placeholder="Enter Your Case Number Here" getRef={input=>this.caseNumber=input}/>
+                                <Input type="text" id="findCaseInput" placeholder="Enter Your Case Number Here" onChange={this.handleInput}/>
                             </FormGroup>
-                            <Button onClick={this.findCase}>Submit</Button>
                         </Form>
                         {this.state.searchEmpty ? (<p className="error-message">Cannot find your case</p>) : this.state.searchError ? (<p className="error-message">Error finding case</p>) : (<div></div>)}
                         <div id="case-window-container">
@@ -97,8 +108,8 @@ class FindYourCase extends Component {
                                             ))}
                                         </div>
                                     </div>
-                                    ) : this.state.isLoading ? (
-                                            <ReactLoading type={"cylon"} color={"cornflowerblue"} height="667" width="375"/>
+                                ) : this.state.isLoading ? (
+                                    <div>loading</div>
                                         ) : (
                                             <div>
                                                 <h1>Find Your Case</h1>

@@ -82,6 +82,7 @@ class AdminDashboard extends Component {
         const currentActive = this.state.currentSelected ? "is-active" : "not-active";
         const closedActive = this.state.closedSelected ? "is-active" : "not-active";
         return(
+            <div className="dashboard-app">
             <div className="dashboard-container">
                 <div className="table-container">
                     <div className="client-header">
@@ -118,7 +119,8 @@ class AdminDashboard extends Component {
                             </table>
                         </div>
             <style jsx global>{dashboardStyles}</style>
-            </div>
+        </div>
+    </div>
         )
     }
 }

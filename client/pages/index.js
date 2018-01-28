@@ -20,15 +20,11 @@ class Index extends Component {
         console.log('requesting bail from arthur...')
     }
 
-    imageLoaded = () => {
-        this.setState({
-            imagePath: "/static/images/suit-min-min.jpg"
-        })
-    }
-
+    
     render(){
         return (
             <Layout>
+                <div className="home-page-container">
                 <div id="splash-container">
                     <div id="splash-info-container">
                         <div id="splash-info">
@@ -38,7 +34,7 @@ class Index extends Component {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className="home-page-body">
                     <Row>
                         <Col xs="12" sm="12" md="12" lg="12" xl="12">
                             <div id="home-info-container">
@@ -65,6 +61,7 @@ class Index extends Component {
                     </Row>
                 </div>
                 <style jsx global>{homePageStyles}</style>
+            </div>
             </Layout>
         )
     }

@@ -19,11 +19,24 @@ export default css `
         border-radius: 0 !important;
     }
 
+    .body-nav {
+        height: 56px;
+        width: 100%;
+        background-color: #0a1612;
+        position: absolute;
+    }
+
     #layout {
         min-height: 100vh;
     }
 
+    .content-container {
+        min-height: 100vh;
+    }
+
     .navbar {
+        max-width: 1280px;
+        margin: auto;
         padding-left: 80px;
         padding-right: 68px;
     }

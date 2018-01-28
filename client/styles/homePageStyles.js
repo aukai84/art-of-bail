@@ -33,11 +33,17 @@ export default css`
         border-radius: 0;
     }
 
+    .home-page-body {
+        max-width: 1280px;    
+        margin: auto;
+    }
+
     #home-info-container {
-    height: 305px;
-    width: 100%;
-    text-align: center;
-    padding-top: 80px;
+        height: 305px;
+        width: 100%;
+        text-align: center;
+        padding-top: 80px;
+        background-color: #ffffff;
     }
 
     .home-column-containers {
@@ -50,6 +56,7 @@ export default css`
     #quote-row {
         background-color: #ffffff;
         padding: 50px;
+        margin: 0;
     }
 
 @media screen and (max-width: 667px){
