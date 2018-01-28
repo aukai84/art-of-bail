@@ -2,7 +2,7 @@ import css from 'styled-jsx/css'
 
 export default css`
     .find-case-container {
-        max-width: 1280px;
+        max-width: 1100px;
         margin: auto;
         padding: 40px;
         min-height: 100vh;

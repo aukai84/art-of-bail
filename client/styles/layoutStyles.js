@@ -35,7 +35,7 @@ export default css `
     }
 
     .navbar {
-        max-width: 1280px;
+        max-width: 1100px;
         margin: auto;
         padding-left: 80px;
         padding-right: 68px;

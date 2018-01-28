@@ -34,7 +34,7 @@ export default css`
     }
 
     .home-page-body {
-        max-width: 1280px;    
+        max-width: 1100px;    
         margin: auto;
     }
 
