@@ -135,8 +135,11 @@ handleEnterKey(e){
                                 ) : this.state.isLoading ? (
                                     <div>loading</div>
                                         ) : (
-                                            <div>
-                                                <h1>Find Your Case</h1>
+                                            <div className="find-case-splash">
+                                                <h1>Find Your Case!</h1>
+                                                <p>court dates</p>
+                                                <p>payment information</p>
+                                                <p>bail information</p>
                                             </div>
                                         )
                             } 
