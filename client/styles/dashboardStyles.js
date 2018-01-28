@@ -5,7 +5,7 @@ export default css`
 .dashboard-container {
     background-color: #1a2930;
     padding: 40px;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .client-header {

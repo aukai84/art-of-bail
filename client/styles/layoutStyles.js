@@ -4,6 +4,7 @@ export default css `
 
     body {
         font-family: 'Open Sans', sans-serif !important;
+        min-height: 100vh;
     }
 
     input {
@@ -19,7 +20,7 @@ export default css `
     }
 
     #layout {
-        min-height: 100%;
+        min-height: 100vh;
     }
 
     .navbar {
