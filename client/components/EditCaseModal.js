@@ -54,7 +54,6 @@ class EditCaseModal extends Component {
     }
 
     render(){
-        console.log(this.state)
         return(
             <div>
                 <Button className="edit-case-button" size="sm" color="primary" onClick={this.toggle}>Edit Case</Button>

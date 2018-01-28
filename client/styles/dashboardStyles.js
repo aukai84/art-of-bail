@@ -51,7 +51,7 @@ export default css`
 .table-container {
     background-color: #ffffff;
     padding: 40px;
-    height: 100%;
+    min-height: 100vh;
 }
 
 table {

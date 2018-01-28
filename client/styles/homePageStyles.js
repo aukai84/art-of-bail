@@ -61,7 +61,7 @@ export default css`
 
 @media screen and (max-width: 667px){
     #quote-row {
-        padding: 35px;
+        padding: 35px 20px 35px 20px;
     }
 }
 

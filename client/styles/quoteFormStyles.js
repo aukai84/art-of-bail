@@ -15,4 +15,9 @@ export default css`
     color: red;
 }
 
+@media screen and (max-width: 425px) {
+    #quote-form-panel {
+        padding: 20px;
+    }
+}
 `

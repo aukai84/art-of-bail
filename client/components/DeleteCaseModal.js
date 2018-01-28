@@ -31,7 +31,7 @@ class DeleteCaseModal extends Component {
     render(){
         return(
             <div>
-                {this.props.isModal ? (<Button color="danger" onClick={this.toggle}>Delete</Button>) : (<div onClick={this.toggle}><img src="/static/images/icon-close.png"/></div>)}
+                {this.props.isModal ? (<Button color="danger" onClick={this.toggle}>Delete</Button>) : (<div onClick={this.toggle}>x</div>)}
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalBody>
                         <div>Are you sure you want to close this case?</div>

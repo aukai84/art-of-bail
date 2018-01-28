@@ -5,4 +5,14 @@ export default css`
         height: 80%;
         border: none;
     }
+
+@media screen and (max-width: 425px) {
+    .edit-case-button {
+        margin-bottom: 20px;
+        width: 100%;
+        height: 55px;
+    }
+}
+    
+
 `
