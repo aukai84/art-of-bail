@@ -35,6 +35,7 @@ class ClientPage extends Component {
 
     render(){
         return(
+            <div className="dashboard-app">
             <div className="dashboard-container">
                 <div className="table-container">
                     <div className="client-header">
@@ -91,6 +92,7 @@ class ClientPage extends Component {
                 <style jsx global>{dashboardStyles}</style>
                 <style jsx>{clientPageStyles}</style>
             </div>
+        </div>
         )
     }
 }

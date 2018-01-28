@@ -17,6 +17,7 @@ class FindYourCase extends Component {
             searchEmpty: false 
         }
         this.handleInput = this.handleInput.bind(this);
+        this.handleEnterKey = this.handleEnterKey.bind(this);
         this.findCase = this.findCase.bind(this);
     }
 
@@ -75,7 +76,7 @@ class FindYourCase extends Component {
                         <Form>
                             <FormGroup>
                                 <Label for="findCaseInput">Find Your Case</Label>
-                                <Input type="text" id="findCaseInput" placeholder="Enter Your Case Number Here" onChange={this.handleInput}/>
+                                <Input type="text" id="findCaseInput" placeholder="Enter Your Case Number Here" onKeyDown={this.handleEnterKey} onChange={this.handleInput}/>
                             </FormGroup>
                         </Form>
                         {this.state.searchEmpty ? (<p className="error-message">Cannot find your case</p>) : this.state.searchError ? (<p className="error-message">Error finding case</p>) : (<div></div>)}
