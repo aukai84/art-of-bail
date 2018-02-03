@@ -32,7 +32,7 @@ export default function withAuth(AuthComponent) {
                     <style jsx>{`
                         .load-screen {
                         background-color: #1a2930;
-                        height: 100vh;
+                        min-height: 100vh;
                         }     
                     `}</style>
                 </Layout>

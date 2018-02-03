@@ -7,7 +7,7 @@ export default css`
 }
 
 .dashboard-container {
-    max-width: 1280px;
+    max-width: 1100px;
     margin: auto;
     background-color: #1a2930;
     padding: 40px;
@@ -103,6 +103,7 @@ td {
 
     .dashboard-container {
         padding: 15px;
+        font-size: .8rem;
     }
 
     .client-header {
@@ -128,7 +129,6 @@ td {
     .hidden-x {
         opacity: 1;
         color: #bbbbbb;
-        width: 10%;
     }
 
 }
