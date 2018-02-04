@@ -33,32 +33,31 @@ class Index extends Component {
                 </div>
                 <div className="home-page-body">
                     <div className="home-info-container">
-                    <Row>
-                        <Col xs="12" sm="12" md="6" lg="6" xl="6">
-                                <img className="court-icon" src="/static/icons/court-icon.png"/>
-                        </Col>
-                        <Col xs="12" sm="12" md="6" lg="6" xl="6">
-                                <h6>We at Art of Bail Hawaii strive to offer the you the best experience.  Call us at <a href="tel:1-808-585-1626">(808) 585-1626</a>, or fill out our <Link prefetch href="/contact-us"><a>contact</a></Link> form below  and our team of professional staff members will be eager to assist you</h6>
-                        </Col>
-                    </Row>
-                </div>
-                    <Row>
-                        <Col xs="12" sm="12" md="4" lg="4" xl="4">
-                            <div className="home-column-containers">First Column info</div>
-                        </Col>
-                        <Col xs="12" sm="12" md="4" lg="4" xl="4">
-                            <div className="home-column-containers">Second Column info</div>
-                        </Col>
-                        <Col xs="12" sm="12" md="4" lg="4" xl="4">
-                            <div className="home-column-containers">Third Column info</div>
-                        </Col>
-                    </Row>
+                        <Row>
+                            <Col xs="12" sm="12" md="6" lg="6" xl="6">
+                                    <img className="court-icon" src="/static/icons/court-icon.png"/>
+                            </Col>
+                            <Col xs="12" sm="12" md="6" lg="6" xl="6">
+                                <h6>We at Art of Bail Hawaii strive to offer the you the best experience.  Our company specializes in a multitude of bail services, including our online platform to acces your bail information.  If you are already a client click <Link prefetch href="/find-your-case"><a>here</a></Link></h6>
+                            </Col>
+                        </Row>
+                    </div>
+                    <div className="home-info-container">
+                        <Row className="support-row">
+                            <Col xs="12" sm="12" md="6" lg="6" xl="6">
+                                <h6>We also offer around the clock <span>24 hour</span> service.  You can call this <a href="tel:1-808-854-7151">number</a>, or fill out our <Link prefetch href="/contact-us"><a>contact</a></Link> form below  and our team of professional staff members will be eager to assist you</h6>
+                            </Col>
+                            <Col xs="12" sm="12" md="6" lg="6" xl="6">
+                                <img className="support-icon" src="/static/icons/support-icon.png"/>
+                            </Col>
+                        </Row>
+                    </div>
                     <Row id="quote-row">
                         <Col xs="12" sm="12" md="6" lg="5" xl="4">
                             <QuoteForm />
                         </Col>
                         <Col xs="12" sm="12" md="6" lg="7" xl="8">
-                            <h2>Info Statement about arthurs website</h2>
+                                <h6>Please fill out our form with questions regarding quoting, services, and consultation.  One of our staff members will respond to you in a timely manner.  If you are already a member you can look up your case information <Link prefetch href="/find-your-case"><a>here</a></Link></h6>
                         </Col>
                     </Row>
                 </div>
