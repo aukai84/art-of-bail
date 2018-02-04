@@ -38,13 +38,33 @@ export default css`
         margin: auto;
     }
 
-    #home-info-container {
-        height: 305px;
+    .icon-container {
+        padding: 80px 40px 0 40px;
+        text-align: center;
+    }
+
+    .court-icon {
+        height: 150px;
+        width: 150px;
+    }
+
+    .home-info-container {
+        height: 100%;
         width: 100%;
         text-align: center;
-        padding-top: 80px;
+        padding: 80px;
         background-color: #ffffff;
     }
+
+    .home-info-container a {
+        text-decoration: none;
+        color: #f7ce3e;
+        font-weight: bold;
+    }
+
+    .home-info-container a:hover {
+        color: #212529;
+    } 
 
     .home-column-containers {
         background-color: #f7ce3e;
@@ -62,6 +82,13 @@ export default css`
 @media screen and (max-width: 667px){
     #quote-row {
         padding: 35px 20px 35px 20px;
+    }
+        .home-info-container img {
+            margin-bottom: 60px;
+        }
+    .home-info-container {
+        height: 100%;
+        padding: 60px;
     }
 }
 

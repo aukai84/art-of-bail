@@ -32,12 +32,17 @@ class Index extends Component {
                     </div>
                 </div>
                 <div className="home-page-body">
+                    <div className="home-info-container">
                     <Row>
-                        <Col xs="12" sm="12" md="12" lg="12" xl="12">
-                            <div id="home-info-container">
-                                This will be the information about arthur, getting a quote, mission statement?, etc
-                            </div>
+                        <Col xs="12" sm="12" md="6" lg="6" xl="6">
+                                <img className="court-icon" src="/static/icons/court-icon.png"/>
                         </Col>
+                        <Col xs="12" sm="12" md="6" lg="6" xl="6">
+                                <h6>We at Art of Bail Hawaii strive to offer the you the best experience.  Call us at <a href="tel:1-808-585-1626">(808) 585-1626</a>, or fill out our <Link prefetch href="/contact-us"><a>contact</a></Link> form below  and our team of professional staff members will be eager to assist you</h6>
+                        </Col>
+                    </Row>
+                </div>
+                    <Row>
                         <Col xs="12" sm="12" md="4" lg="4" xl="4">
                             <div className="home-column-containers">First Column info</div>
                         </Col>
