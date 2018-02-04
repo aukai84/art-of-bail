@@ -21,7 +21,8 @@ class AboutUs extends Component {
                 </div>
                 <div className="about-us-container">
                     <div className="about-text-container">
-                        <h1>About</h1>
+                        <h1>About Us</h1>
+                        <h5><i>A third generation bail company</i></h5>
                         <p>Art of Bail Hawaii Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo eget tortor quis aliquam. Phasellus lacus turpis, ornare ut luctus vitae, mollis quis ante. Donec sit amet nibh ac orci interdum tincidunt sed in felis. Etiam ultrices ante vel dui gravida, at congue erat sollicitudin. Phasellus id dictum diam. Praesent ultrices turpis mauris, et porttitor lectus cursus quis. Phasellus quis leo sed nibh scelerisque euismod at eu risus. Etiam facilisis varius felis et tincidunt. Praesent id neque risus. Phasellus ac lorem efficitur, laoreet elit quis, feugiat libero. Aenean tellus ligula, venenatis ut purus et, tincidunt malesuada arcu.</p>
                     </div>
                     <div className="about-us-columns">

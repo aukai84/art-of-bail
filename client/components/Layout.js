@@ -64,9 +64,12 @@ export default class Layout extends Component {
                   </Collapse>
               </Navbar>
                   {this.props.children}
-              <div id="footer">
-                <p>Footer information</p>
-              </div>
+                  <div className="footer-container">
+                      <div className="footer-info">
+                          <h5>Art of Bail Hawaii</h5>
+                          <p>Created and maintained by Famouss Solutions Co.</p>
+                      </div>
+                </div>
                 <style jsx global>{layoutStyles}</style>
             </div>
         </div>

@@ -58,14 +58,19 @@ export default css `
         padding-left: 0;
     }
 
-    #footer {
-        height: 100px;
+    .footer-container {
+        display: flex;
+        align-items:center;
+        height: 125px;
         color: #ffffff;
         background-color: #1a2930;
-        text-align: center;
-        vertical-align: middle;
-        bottom: 0;
         width: 100%;
+    }
+
+    .footer-info {
+        text-align: center;
+        max-width: 1100px;
+        margin: auto;
     }
 
 @media screen and (max-width: 425px) {

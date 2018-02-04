@@ -11,6 +11,11 @@ export default css`
         line-height: 28px;
     }
 
+    h5 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
     .about-us-splash {
         background-color: #1a2930;
         color: #ffffff;
@@ -29,6 +34,7 @@ export default css`
     }
 
     .about-us-container {
+        min-height: 100vh;
         max-width: 1100px;
         margin: auto;
         padding: 40px;
