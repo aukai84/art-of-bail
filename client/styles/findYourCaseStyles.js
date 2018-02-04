@@ -5,7 +5,7 @@ export default css`
         max-width: 1100px;
         margin: auto;
         padding: 40px;
-        min-height: 100vh;
+        height: 100vh;
     }
 
     .search-container {
