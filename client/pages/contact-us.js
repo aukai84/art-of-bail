@@ -58,13 +58,15 @@ class ContactUs extends Component {
                                 <QuoteForm />
                             </Col>
                             <Col xs="12" sm="12" md="6" lg="8" xl="8">
-                                <GoogleMapsComponent
-                                    googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_KEY}&v=3.exp&libraries=geometry,drawing,places`}
-                                    isMarkerShown
-                                    loadingElement={<div style={{height: '100%'}}/>}
-                                    containerElement={<div style={{height: '100%'}}/>}
-                                    mapElement={<div style={{height:'100%'}}/>}
-                                />
+                                <div className="google-maps-container">
+                                    <GoogleMapsComponent
+                                        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_KEY}&v=3.exp&libraries=geometry,drawing,places`}
+                                        isMarkerShown
+                                        loadingElement={<div style={{height: '100%'}}/>}
+                                        containerElement={<div style={{height: '100%'}}/>}
+                                        mapElement={<div style={{height:'100%'}}/>}
+                                    />
+                                </div>
                             </Col>
                         </Row>
                     </div>

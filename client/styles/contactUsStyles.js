@@ -38,7 +38,6 @@ export default css`
     }
 
     .contact-us-splash-info {
-        padding-bottom: 40px;
     }
     
     .contact-us-container {
@@ -57,4 +56,27 @@ export default css`
     .contact-column {
         margin-bottom: 20px;
     }
+
+    .google-maps-container {
+        height: 100%; 
+    }
+
+@media screen and (max-width: 425px) {
+    .contact-us-splash {
+        padding: 0 20px 0 20px;
+    }
+
+    .contact-us-container {
+        padding: 20px;
+    }
+
+    .contact-info {
+        margin-bottom: 20px;
+    }
+
+        .google-maps-container {
+        padding-top: 20px;
+        height: 300px;
+    }
+}
 `
