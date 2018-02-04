@@ -105,7 +105,7 @@ export default css`
         padding: 35px 20px 35px 20px;
     }
     #quote-row h6 {
-        padding: 40px;
+        padding: 20px 20px 40px 20px;
     }
     .home-info-container img {
         margin-bottom: 60px;
