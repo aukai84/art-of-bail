@@ -6,6 +6,7 @@ import contactUsStyles from '../styles/contactUsStyles.js';
 import quoteFormStyles from '../styles/quoteFormStyles.js';
 import {Container, Row, Col} from 'reactstrap';
 import  QuoteForm from '../components/QuoteForm.js';
+import GoogleMapsComponent from '../components/GoogleMapsComponent.js';
  
 class ContactUs extends Component {
     constructor(props){
@@ -27,16 +28,19 @@ class ContactUs extends Component {
                         <Row>
                             <Col xs="12" sm="12" md="4" lg="4" xl="4">
                                 <h2>Call</h2>
-                                <p>Phone: 808-854-7151</p>
+                                <p>Phone 1: (808) 585-1626</p>
+                                <p>Phone 2: (808) 947-3977</p>
+                                <p>Alt: (808) 589-1194</p>
+                                <p>24 Hr: (808) 854-7151</p>
                             </Col>
                             <Col xs="12" sm="12" md="4" lg="4" xl="4">
                                 <h2>Mail</h2>
-                                <p>Address</p>
+                                <p>1154 Fort St. Mall Suite 204</p>
                                 <p>Honolulu, HI 96813</p>
                             </Col>
                             <Col xs="12" sm="12" md="4" lg="4" xl="4">
                                 <h2>Email</h2>
-                                <p>arthur@gmail.com</p>
+                                <p>artofbailhawaii@gmail.com</p>
                             </Col>
                         </Row>
                     </div>
@@ -45,7 +49,13 @@ class ContactUs extends Component {
                             <QuoteForm />
                         </Col>
                         <Col xs="12" sm="12" md="6" lg="8" xl="8">
-                            Google Map
+                            <GoogleMapsComponent
+                                googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+                                isMarkerShown
+                                loadingElement={<div style={{height: '100%'}}/>}
+                                containerElement={<div style={{height: '100%'}}/>}
+                                mapElement={<div style={{height:'100%'}}/>}
+                            />
                         </Col>
                     </Row>
                 </div>

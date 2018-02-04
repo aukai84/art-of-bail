@@ -27,6 +27,7 @@
     "react": "^16.2.0",
     "react-datepicker": "^0.64.0",
     "react-dom": "^16.2.0",
+    "react-google-maps": "^9.4.5",
     "react-transition-group": "^2.2.1",
     "reactstrap": "^5.0.0-alpha.4"
   }
