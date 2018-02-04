@@ -40,12 +40,14 @@ class ContactUs extends Component {
                                     <img src="/static/icons/location-icon.png"/>
                                     <p>1154 FORT ST MALL STE 204</p>
                                     <p>HONOLULU, HI 96813</p>
+                                    <p>MON-FRI: 8:30 AM to 5:00 PM</p>
+                                    <p>SAT-SUN: 24HR</p>
                                 </div>
                             </Col>
                             <Col xs="12" sm="12" md="4" lg="4" xl="4">
                                 <div className="contact-column">
                                     <img src="/static/icons/mail-icon.png"/>
-                                    <a href="mailto:artofbailhawaii@gmail.com"><p>ARTOFBAIHAWAII@GMAIL.COM</p></a>
+                                    <a href="mailto:artofbailhawaii@gmail.com"><p>ARTOFBAILHAWAII@GMAIL.COM</p></a>
                                 </div>
                             </Col>
                         </Row>

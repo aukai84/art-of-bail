@@ -31,7 +31,7 @@ export default css`
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #1a2930;
+        background-color: #0a1612;
         text-align: center;
         height: 432px;
         color: #ffffff;
