@@ -6,6 +6,23 @@ export default css`
         margin-bottom: 20px;
     }
 
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    img {
+        margin-bottom: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #212529
+    }
+
+    a:hover {
+        color: #888888;
+    }
+
     p {
         margin: 0;
     }
@@ -25,14 +42,19 @@ export default css`
     }
     
     .contact-us-container {
-        min-height: 100vh;
         max-width: 1100px;
         margin: auto;
         padding: 40px;
     }
 
     .contact-info {
-        height: 205px;
+        padding: 20px;
+        height: 100%;
         text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .contact-column {
+        margin-bottom: 20px;
     }
 `
