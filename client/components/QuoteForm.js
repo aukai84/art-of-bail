@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {Form, FormGroup, Label, Input, InputGroup, InputGroupAddon, FormText, Button} from 'reactstrap';
 import quoteFormStyles from '../styles/quoteFormStyles.js';
-
-let API_URL = process.env.API_URI;
+import {API_URL} from '../config';
 
 class QuoteForm extends Component {
     constructor(props){

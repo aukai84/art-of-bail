@@ -7,7 +7,8 @@ import quoteFormStyles from '../styles/quoteFormStyles.js';
 import {Container, Row, Col} from 'reactstrap';
 import  QuoteForm from '../components/QuoteForm.js';
 import GoogleMapsComponent from '../components/GoogleMapsComponent.js';
- 
+import {GOOGLE_KEY} from '../config';
+
 class ContactUs extends Component {
     constructor(props){
         super(props);
@@ -56,7 +57,7 @@ class ContactUs extends Component {
                             </Col>
                             <Col xs="12" sm="12" md="6" lg="8" xl="8">
                                 <GoogleMapsComponent
-                                    googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+                                    googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_KEY}&v=3.exp&libraries=geometry,drawing,places`}
                                     isMarkerShown
                                     loadingElement={<div style={{height: '100%'}}/>}
                                     containerElement={<div style={{height: '100%'}}/>}

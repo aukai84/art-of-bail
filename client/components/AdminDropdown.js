@@ -4,8 +4,7 @@ import {Dropdown, DropdownMenu, DropdownItem, DropdownToggle} from 'reactstrap';
 import AuthService from '../utils/AuthService.js';
 import Router from 'next/router';
 import dropdownStyles from '../styles/dropdownStyles.js';
-
-const API_URL = process.env.API_URL;
+import {API_URL} from '../config';
 const auth = new AuthService(API_URL);
 
 

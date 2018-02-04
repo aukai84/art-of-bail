@@ -6,9 +6,6 @@ import Layout from '../components/Layout.js';
 import QuoteForm from '../components/QuoteForm.js';
 import homePageStyles from '../styles/homePageStyles.js';
 
-let API_URL = process.env.API_URI;
-console.log('this is the api...', API_URL)
-
 class Index extends Component {
     constructor(props){
         super(props);

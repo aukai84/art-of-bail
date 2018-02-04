@@ -7,7 +7,8 @@ import clientPageStyles from '../styles/clientPageStyles.js';
 import findYourCaseStyles from '../styles/findYourCaseStyles.js';
 import {Form, FormGroup, FormText, Label, Input, Container, Row, Col, Button} from 'reactstrap';
 import AuthService from '../utils/AuthService.js';
-const auth = new AuthService(process.env.API_URL);
+import {API_URL} from '../config';
+const auth = new AuthService(API_URL);
 
 class FindYourCase extends Component {
     constructor(props){

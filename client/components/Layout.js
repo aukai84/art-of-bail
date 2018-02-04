@@ -5,8 +5,7 @@ import {Container, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem} f
 import layoutStyles from '../styles/layoutStyles.js';
 import AuthService from '../utils/AuthService.js';
 import AdminDropdown from './AdminDropdown.js';
-
-const API_URL = process.env.API_URL;
+import {API_URL} from '../config';
 const auth = new AuthService(API_URL); 
 
 export default class Layout extends Component {
