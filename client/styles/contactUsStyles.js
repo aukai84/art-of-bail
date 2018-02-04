@@ -11,11 +11,17 @@ export default css`
     }
 
     .contact-us-splash {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-color: #1a2930;
         text-align: center;
-        height: 532px;
+        height: 432px;
         color: #ffffff;
-        padding: 150px 20px 0px 20px;
+    }
+
+    .contact-us-splash-info {
+        padding-bottom: 40px;
     }
     
     .contact-us-container {
@@ -23,5 +29,10 @@ export default css`
         max-width: 1100px;
         margin: auto;
         padding: 40px;
+    }
+
+    .contact-info {
+        height: 205px;
+        text-align: center;
     }
 `

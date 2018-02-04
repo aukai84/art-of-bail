@@ -55,7 +55,6 @@ export default css`
 
     #quote-row {
         background-color: #ffffff;
-        padding: 50px;
         margin: 0;
     }
 
