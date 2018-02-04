@@ -48,7 +48,7 @@ handleEnterKey(e){
             .then(res => {
                 if(res.case){
                     this.setState({
-                        isLoading: false,
+                        isLoading:false,
                         case: res.case,
                         searchEmpty: false,
                         searchError: false
@@ -56,8 +56,8 @@ handleEnterKey(e){
                 } else {
                     console.log(res)
                     this.setState({
-                        searchEmpty: true,
                         isLoading: false,
+                        searchEmpty: true,
                         case: null
                     })
                 }
@@ -134,7 +134,9 @@ handleEnterKey(e){
                                         </div>
                                     </div>
                                 ) : this.state.isLoading ? (
-                                    <div>loading</div>
+                                    <div className="loading-screen">
+                                        <h2>Finding case...</h2> 
+                                    </div>
                                         ) : (
                                             <div className="find-case-splash">
                                                 <h1>Find Your Case!</h1>
