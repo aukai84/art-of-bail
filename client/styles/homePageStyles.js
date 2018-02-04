@@ -33,6 +33,10 @@ export default css`
         border-radius: 0;
     }
 
+    .contact-us-button:hover {
+        background-color: #f7ce3e;
+    }
+
     .home-page-body {
         max-width: 1100px;    
         margin: auto;

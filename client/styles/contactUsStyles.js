@@ -20,7 +20,7 @@ export default css`
     }
 
     a:hover {
-        color: #888888;
+        color: #f7ce3e;
     }
 
     p {

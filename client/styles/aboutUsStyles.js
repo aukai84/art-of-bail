@@ -26,13 +26,6 @@ export default css`
         height: 432px;
     }
 
-    .about-us-info-container {
-        padding: 40px;
-        height: 305px;
-        width: 100%;
-        text-align: center;
-    }
-
     .about-us-container {
         min-height: 100vh;
         max-width: 1100px;
@@ -47,4 +40,17 @@ export default css`
     .about-us-columns {
         text-align: center;
     }
+
+@media screen and (max-width: 425px) {
+
+    .about-us-splash {
+        padding: 20px;
+    }
+
+        .about-us-container {
+            text-align: center;
+        }
+
+}
+
 `
