@@ -48,10 +48,10 @@ export default css`
     }
 
     .contact-info {
-        padding: 20px;
+        padding: 20px 0 20px 0;
         height: 100%;
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 
     .contact-column {
