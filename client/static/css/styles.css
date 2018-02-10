@@ -11,6 +11,10 @@ label {
     font-size: 13px;
 }
 
+.row {
+    align-items: center;
+}
+
 
 /*.dropdown-menu {
     border: none;
